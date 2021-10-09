@@ -1,0 +1,18 @@
+<section class="bottom-nav">
+  <a
+    ><mat-icon>home</mat-icon>
+    <p>home</p></a
+  >
+  <a
+    ><mat-icon>explore</mat-icon>
+    <p>explore</p></a
+  >
+  <a *ngIf="!isAuth"
+    ><mat-icon>account_circle</mat-icon>
+    <p>join</p></a
+  >
+  <a *ngIf="isAuth"
+    ><mat-icon>account_circle</mat-icon>
+    <p>profile</p></a
+  >
+</section>

@@ -1,0 +1,27 @@
+@import "../../../styles.scss";
+.bottom-nav {
+  display: flex;
+  background-color: $secondaryPlus;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0.6rem 0 0 0;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  a {
+    flex: 1 1 100%;
+    color: $primary;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    &:hover {
+      color: rgb(0, 212, 240);
+    }
+  }
+}
+@media (min-width: 600px) {
+  .bottom-nav {
+    display: none;
+  }
+}

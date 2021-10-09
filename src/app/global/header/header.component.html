@@ -1,0 +1,26 @@
+<header>
+  <div class="container">
+    <img src="../../assets/logo.png" alt="logo" />
+    <div class="header-buttons-group">
+      <div *ngIf="show">
+        <a [routerLink]="['/signIn']" class="button border-btn">{{
+          !isAuth ? "Join Now" : "Profile"
+        }}</a>
+        <a class="button" [routerLink]="['/explore']">explore</a>
+        <a class="button" [routerLink]="['/home']">home</a>
+      </div>
+      <input
+        type="text"
+        [(ngModel)]="value"
+        *ngIf="!show"
+        class="inputfield"
+        placeholder="search user ..."
+      />
+      <button class="resetButton">
+        <mat-icon class="icon" (click)="this.show = !this.show"
+          >search</mat-icon
+        >
+      </button>
+    </div>
+  </div>
+</header>

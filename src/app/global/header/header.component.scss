@@ -1,0 +1,84 @@
+@import "../../../styles.scss";
+header {
+  position: relative;
+  height: 80px;
+  background-color: $primary;
+  box-shadow: 1px 2px 5px gray;
+}
+
+h1 {
+  color: $secondary;
+}
+header {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+header img {
+  width: 180px;
+}
+.button {
+  padding: 0.45rem 1.9em;
+  margin-left: 0.4rem;
+  font-size: 0.8rem;
+  background: $primary;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  color: rgb(80, 77, 77);
+  &:hover {
+    background: #e7e7e7;
+  }
+}
+.header-buttons-group {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  color: $secondary;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+.border-btn {
+  border: 1px solid $secondary;
+  color: $secondary;
+}
+.inputfield {
+  width: 250px;
+  border-radius: 10px;
+  padding: 0.4rem;
+  border: 2px solid $secondary;
+  &:focus {
+    outline: none;
+  }
+}
+.resetButton {
+  border: none;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:focus {
+    border: none;
+  }
+}
+@media (max-width: 600px) {
+  .header-buttons-group > *:not(.inputfield) {
+    display: none;
+  }
+  header {
+    height: 60px;
+    .container {
+      justify-content: center;
+    }
+  }
+  img {
+    display: none;
+  }
+  .inputfield {
+    align-items: center;
+    margin: 0 auto;
+  }
+}
