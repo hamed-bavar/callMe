@@ -65,8 +65,11 @@ header img {
   }
 }
 @media (max-width: 600px) {
-  .header-buttons-group > *:not(.inputfield) {
+  .header-buttons-group > * {
     display: none;
+  }
+  .inputfield {
+    display: block !important;
   }
   header {
     height: 60px;

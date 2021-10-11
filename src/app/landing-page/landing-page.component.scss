@@ -1,0 +1,76 @@
+@import "../../styles.scss";
+.container {
+  height: 100%;
+}
+.landing-container {
+  padding-bottom: 60px;
+}
+.landing-img {
+  width: 100%;
+  max-width: 300px;
+}
+section {
+  div {
+    div {
+      text-align: center;
+    }
+  }
+}
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: $secondary;
+}
+.right {
+  padding: 3rem 0;
+  p {
+    font-size: 18px;
+    line-height: 32px;
+    color: $lightGray;
+    max-width: 35ch;
+    margin: 1.5rem auto;
+  }
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem 3rem;
+  border: 1px solid $secondary;
+  border-radius: 4px;
+  font-weight: 50 0;
+  background: $secondary;
+  color: white;
+
+  &:hover {
+    background: $secondaryPlus;
+  }
+}
+section:nth-child(even) {
+  background: rgb(235, 228, 228);
+}
+section:last-child h2 {
+  margin: 0;
+  padding: 0;
+}
+section:last-child p {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 650px) {
+  .landing-container {
+    padding-bottom: 0;
+  }
+  section .container {
+    display: flex;
+    align-items: center;
+  }
+  .container > div {
+    flex: 1 1 100%;
+  }
+}
