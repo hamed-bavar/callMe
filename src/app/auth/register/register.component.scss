@@ -13,5 +13,19 @@
       margin: 0 auto;
       margin-bottom: 1rem;
     }
+    .card-actions {
+      button {
+        display: block;
+        width: 90%;
+        margin: 0.5rem auto;
+      }
+      .switch {
+        display: inline;
+        font-size: 1rem;
+        color: $lightGray;
+        font-weight: 550;
+        cursor: pointer;
+      }
+    }
   }
 }

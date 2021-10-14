@@ -6,32 +6,27 @@
     <mat-card-content class="content">
       <form [formGroup]="authForm" (ngSubmit)="submitForm()">
         <app-input
-          label="userName"
+          label="Username"
           type="text"
           [control]="$any(authForm).get('username')"
         ></app-input>
         <app-input
-          label="email"
+          label="Email"
           type="text"
           [control]="$any(authForm).get('email')"
         ></app-input>
         <app-input
-          label="password"
+          label="Password"
           type="password"
           [control]="$any(authForm).get('password')"
         ></app-input>
-        <mat-card-actions>
-          <button
-            mat-raised-button
-            color="primary"
-            type="button"
-            (click)="changeGoal()"
-          >
-            swtich to {{ isSignUp ? "Signin" : "Signup" }}
-          </button>
-          <button mat-raised-button color="accent" type="submit">
+        <mat-card-actions class="card-actions">
+          <button mat-raised-button color="primary" type="submit">
             {{ !isSignUp ? "Signin" : "Signup" }}
           </button>
+          <p (click)="changeGoal()" class="switch">
+            Swtich To {{ isSignUp ? "Signin" : "Signup" }}
+          </p>
         </mat-card-actions>
       </form>
     </mat-card-content>
