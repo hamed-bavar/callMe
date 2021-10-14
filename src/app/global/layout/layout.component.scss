@@ -1,0 +1,9 @@
+.layout {
+  padding-bottom: 60px;
+  min-height: 100vh;
+}
+@media (min-width: 650px) {
+  .layout {
+    padding-bottom: 0;
+  }
+}

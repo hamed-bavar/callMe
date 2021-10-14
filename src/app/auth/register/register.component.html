@@ -1,0 +1,39 @@
+<div class="center registerContainer">
+  <mat-card class="card">
+    <mat-card-header>
+      <img src="../../../assets/logo.png" alt="logo" class="signInLogo" />
+    </mat-card-header>
+    <mat-card-content class="content">
+      <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+        <app-input
+          label="userName"
+          type="text"
+          [control]="$any(authForm).get('username')"
+        ></app-input>
+        <app-input
+          label="email"
+          type="text"
+          [control]="$any(authForm).get('email')"
+        ></app-input>
+        <app-input
+          label="password"
+          type="password"
+          [control]="$any(authForm).get('password')"
+        ></app-input>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            type="button"
+            (click)="changeGoal()"
+          >
+            swtich to {{ isSignUp ? "Signin" : "Signup" }}
+          </button>
+          <button mat-raised-button color="accent" type="submit">
+            {{ !isSignUp ? "Signin" : "Signup" }}
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

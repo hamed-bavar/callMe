@@ -1,10 +1,4 @@
 @import "../../styles.scss";
-.container {
-  height: 100%;
-}
-.landing-container {
-  padding-bottom: 60px;
-}
 .landing-img {
   width: 100%;
   max-width: 300px;
@@ -63,9 +57,6 @@ section:last-child p {
 }
 
 @media (min-width: 650px) {
-  .landing-container {
-    padding-bottom: 0;
-  }
   section .container {
     display: flex;
     align-items: center;
