@@ -3,7 +3,7 @@
     <img src="../../assets/logo.png" alt="logo" />
     <div class="header-buttons-group">
       <div *ngIf="show">
-        <a [routerLink]="['/signIn']" class="button border-btn">{{
+        <a [routerLink]="['/register']" class="button border-btn">{{
           !isAuth ? "Join Now" : "Profile"
         }}</a>
         <a class="button" [routerLink]="['/explore']">explore</a>

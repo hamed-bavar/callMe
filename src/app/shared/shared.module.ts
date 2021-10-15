@@ -6,12 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './input/input.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const materialComponents = [
   MatIconModule,
   MatCardModule,
   MatInputModule,
   MatButtonModule,
+  MatSnackBarModule,
 ];
 @NgModule({
   declarations: [InputComponent],

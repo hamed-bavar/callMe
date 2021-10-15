@@ -1,6 +1,6 @@
 <div class="center registerContainer">
   <mat-card class="card">
-    <mat-card-header>
+    <mat-card-header class="card-header">
       <img src="../../../assets/logo.png" alt="logo" class="signInLogo" />
     </mat-card-header>
     <mat-card-content class="content">
@@ -25,7 +25,7 @@
             {{ !isSignUp ? "Signin" : "Signup" }}
           </button>
           <p (click)="changeGoal()" class="switch">
-            Swtich To {{ isSignUp ? "Signin" : "Signup" }}
+            Switch To {{ isSignUp ? "Signin" : "Signup" }}
           </p>
         </mat-card-actions>
       </form>

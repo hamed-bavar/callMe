@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -22,12 +23,19 @@ export class RegisterComponent implements OnInit {
       Validators.maxLength(20),
     ]),
   });
-  constructor() {}
+  constructor(private _snackBar: MatSnackBar) {}
   submitForm() {
-    console.log('submit');
+    if (this.authForm.invalid) {
+      this._snackBar.open('invalid data', 'close', {
+        duration: 3000,
+      });
+      return;
+    }
   }
   changeGoal() {
     this.isSignUp = !this.isSignUp;
   }
   ngOnInit(): void {}
 }
+
+export class PizzaPartyComponent {}
