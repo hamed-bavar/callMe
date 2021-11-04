@@ -1,13 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  show: boolean = window.innerWidth > 600 ? true : false;
+  isAuth: boolean | null;
+  constructor(private auth: AuthService) {
+    this.auth.signedin$.subscribe((e) => (this.isAuth = e));
+  }
+  showSearchBar: boolean = window.innerWidth < 600 ? true : false;
   value: string = '';
-  isAuth = false;
-  constructor() {}
   ngOnDestroy() {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.showSearchBar = event.target.innerWidth < 600 ? true : false;
+  }
 }

@@ -8,7 +8,8 @@ import { FormControl } from '@angular/forms';
 export class InputComponent implements OnInit {
   @Input() label: string;
   @Input() control: FormControl;
-  @Input() type: string;
+  @Input() type: string = 'password';
+  @Input() hide: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}

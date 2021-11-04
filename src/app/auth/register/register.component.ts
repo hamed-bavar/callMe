@@ -1,7 +1,8 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -14,7 +15,6 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^[a-z0-9]+$/),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
@@ -23,7 +23,11 @@ export class RegisterComponent implements OnInit {
       Validators.maxLength(20),
     ]),
   });
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(
+    private _snackBar: MatSnackBar,
+    private authService: AuthService,
+    private router: Router
+  ) {}
   submitForm() {
     if (this.authForm.invalid) {
       this._snackBar.open('invalid data', 'close', {
@@ -31,6 +35,13 @@ export class RegisterComponent implements OnInit {
       });
       return;
     }
+    this.authService.doAuth(this.authForm.value, this.isSignUp).subscribe(
+      (success) => this.router.navigateByUrl('/profile'),
+      (e) =>
+        this._snackBar.open(e, 'close', {
+          duration: 3000,
+        })
+    );
   }
   changeGoal() {
     this.isSignUp = !this.isSignUp;

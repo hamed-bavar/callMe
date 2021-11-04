@@ -1,6 +1,11 @@
 .field {
+  .mat-form-field {
+    border-radius: 20px !important;
+  }
+
   .full-width {
     width: 90%;
+    border-radius: 20px !important;
   }
 }
 .input {

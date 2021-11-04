@@ -2,22 +2,31 @@
   <div class="container">
     <img src="../../assets/logo.png" alt="logo" />
     <div class="header-buttons-group">
-      <div *ngIf="show">
-        <a [routerLink]="['/register']" class="button border-btn">{{
-          !isAuth ? "Join Now" : "Profile"
-        }}</a>
+      <div *ngIf="!showSearchBar">
+        <a
+          *ngIf="!isAuth"
+          [routerLink]="['/register']"
+          class="button border-btn"
+        >
+          Join Now
+        </a>
+        <a *ngIf="isAuth" [routerLink]="['/profile']" class="button border-btn"
+          >Profile</a
+        >
         <a class="button" [routerLink]="['/explore']">explore</a>
-        <a class="button" [routerLink]="['/home']">home</a>
+        <a class="button" [routerLink]="['/']">home</a>
       </div>
       <input
         type="text"
         [(ngModel)]="value"
-        *ngIf="!show"
+        *ngIf="showSearchBar"
         class="inputfield"
         placeholder="search user ..."
       />
       <button class="resetButton">
-        <mat-icon class="icon" (click)="this.show = !this.show"
+        <mat-icon
+          class="icon"
+          (click)="this.showSearchBar = !this.showSearchBar"
           >search</mat-icon
         >
       </button>

@@ -4,7 +4,7 @@ export interface UserCredentials {
   email: string;
 }
 export interface SignupResponse {
-  username: string;
+  token: string;
 }
 
 export interface SignedinResponse {
