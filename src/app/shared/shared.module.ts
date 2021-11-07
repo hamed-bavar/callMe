@@ -7,6 +7,8 @@ import { InputComponent } from './input/input.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoadingComponent } from './loading/loading.component';
 
 const materialComponents = [
   MatIconModule,
@@ -14,10 +16,11 @@ const materialComponents = [
   MatInputModule,
   MatButtonModule,
   MatSnackBarModule,
+  MatProgressSpinnerModule,
 ];
 @NgModule({
-  declarations: [InputComponent],
+  declarations: [InputComponent, LoadingComponent],
   imports: [CommonModule, materialComponents, ReactiveFormsModule],
-  exports: [materialComponents, InputComponent],
+  exports: [materialComponents, InputComponent, LoadingComponent],
 })
 export class SharedModule {}

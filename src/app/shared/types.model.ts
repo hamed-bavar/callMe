@@ -6,8 +6,8 @@ export interface UserCredentials {
 export interface SignupResponse {
   token: string;
 }
-
-export interface SignedinResponse {
-  authenticated: boolean;
-  username: string;
+export interface Error {
+  error: {
+    description: string;
+  };
 }

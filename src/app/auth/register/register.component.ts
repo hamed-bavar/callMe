@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(4),
+      Validators.minLength(8),
       Validators.maxLength(20),
     ]),
   });
@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
   ) {}
   submitForm() {
     if (this.authForm.invalid) {
+      console.log(this.authForm);
       this._snackBar.open('invalid data', 'close', {
         duration: 3000,
       });
@@ -37,10 +38,11 @@ export class RegisterComponent implements OnInit {
     }
     this.authService.doAuth(this.authForm.value, this.isSignUp).subscribe(
       (success) => this.router.navigateByUrl('/profile'),
-      (e) =>
-        this._snackBar.open(e, 'close', {
+      (message) => {
+        this._snackBar.open(message, 'close', {
           duration: 3000,
-        })
+        });
+      }
     );
   }
   changeGoal() {

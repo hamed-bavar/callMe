@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bottom-navigation.component.scss'],
 })
 export class BottomNavigationComponent implements OnInit {
-  isAuth = true;
-  constructor() {}
-
-  ngOnInit(): void {}
+  isAuth: boolean | null;
+  constructor(private authService: AuthService) {}
+  ngOnInit(): void {
+    this.authService.signedin$.subscribe((e) => (this.isAuth = e));
+  }
 }

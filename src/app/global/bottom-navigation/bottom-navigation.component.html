@@ -1,17 +1,17 @@
 <section class="bottom-nav">
-  <a
+  <a routerLink="/"
     ><mat-icon>home</mat-icon>
     <p>home</p></a
   >
-  <a
+  <a routerLink="/explore"
     ><mat-icon>explore</mat-icon>
     <p>explore</p></a
   >
-  <a *ngIf="!isAuth"
+  <a *ngIf="!isAuth" routerLink="/register"
     ><mat-icon>account_circle</mat-icon>
     <p>join</p></a
   >
-  <a *ngIf="isAuth"
+  <a *ngIf="isAuth" routerLink="/profile"
     ><mat-icon>account_circle</mat-icon>
     <p>profile</p></a
   >
