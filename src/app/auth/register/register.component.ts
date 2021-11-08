@@ -30,14 +30,13 @@ export class RegisterComponent implements OnInit {
   ) {}
   submitForm() {
     if (this.authForm.invalid) {
-      console.log(this.authForm);
       this._snackBar.open('invalid data', 'close', {
         duration: 3000,
       });
       return;
     }
     this.authService.doAuth(this.authForm.value, this.isSignUp).subscribe(
-      (success) => this.router.navigateByUrl('/profile'),
+      (_) => this.router.navigateByUrl('/dashboard'),
       (message) => {
         this._snackBar.open(message, 'close', {
           duration: 3000,

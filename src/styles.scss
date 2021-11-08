@@ -27,3 +27,13 @@ a {
   align-items: center;
   justify-content: center;
 }
+@mixin tablet-up {
+  @media (min-width: 650px) {
+    @content;
+  }
+}
+@mixin desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

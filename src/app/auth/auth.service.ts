@@ -1,9 +1,9 @@
 import { LoadingService } from './../shared/loading.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, throwError } from 'rxjs';
-import { UserCredentials, Error } from '../shared/types.model';
+import { UserCredentials, Error } from '../shared/register.model';
 import { HttpClient } from '@angular/common/http';
-import { SignupResponse } from '../shared/types.model';
+import { SignupResponse } from '../shared/register.model';
 import { catchError, tap } from 'rxjs/operators';
 import { LocalstorageService } from '../shared/localstorage.service';
 import { Router } from '@angular/router';
@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   url = 'http://callme-back.herokuapp.com/api';
   signedin$ = new BehaviorSubject<boolean | null>(null);
+  token$ = new BehaviorSubject<string | null>(null);
   constructor(
     private http: HttpClient,
     private locStorage: LocalstorageService,
@@ -30,9 +31,10 @@ export class AuthService {
         this.loadingService.onSetLoading();
         return throwError(e.error.description);
       }),
-      tap((req) => {
-        this.locStorage.set('token', req.token);
+      tap((res) => {
+        this.locStorage.set('token', res.token);
         this.signedin$.next(true);
+        this.token$.next(res.token);
         this.loadingService.onSetLoading();
         this.router.navigateByUrl('/');
       })
@@ -40,10 +42,12 @@ export class AuthService {
   }
   checkAuth() {
     const token = this.locStorage.get('token');
+    this.token$.next(token);
     token ? this.signedin$.next(true) : this.signedin$.next(false);
   }
   signout() {
     this.locStorage.remove('token');
     this.signedin$.next(false);
+    this.token$.next(null);
   }
 }

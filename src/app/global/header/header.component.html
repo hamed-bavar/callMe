@@ -10,7 +10,10 @@
         >
           Join Now
         </a>
-        <a *ngIf="isAuth" [routerLink]="['/profile']" class="button border-btn"
+        <a
+          *ngIf="isAuth"
+          [routerLink]="['/dashboard']"
+          class="button border-btn"
           >Profile</a
         >
         <a class="button" [routerLink]="['/explore']">explore</a>

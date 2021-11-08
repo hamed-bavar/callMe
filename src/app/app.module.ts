@@ -1,3 +1,4 @@
+import { DashboardModule } from './dashboard/dashboard.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,19 +10,23 @@ import { FormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthHttpInterceptor } from './auth/auth-http-interceptor';
 @NgModule({
   declarations: [AppComponent, LandingPageComponent],
   imports: [
     BrowserModule,
+    AuthModule,
+    RouterModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
     GlobalModule,
     FormsModule,
-    AuthModule,
-    RouterModule,
-    AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
