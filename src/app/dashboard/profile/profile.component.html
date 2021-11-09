@@ -31,15 +31,15 @@
     </div>
   </section>
   <div class="infos">
-    <div class="bio">
+    <div class="bio" *ngIf="bio !== ''">
       <p>{{ bio }}</p>
     </div>
     <div class="location-born">
-      <div class="location">
+      <div class="location" *ngIf="country !== '' || city !== ''">
         <mat-icon color="gray">place</mat-icon>
         <p>{{ city | uppercase }} , {{ country | uppercase }}</p>
       </div>
-      <div class="born">
+      <div class="born" *ngIf="born !== null">
         <mat-icon>cake</mat-icon>
         <p>{{ born | date: "MMM d, yyyy" }}</p>
       </div>

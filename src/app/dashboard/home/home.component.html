@@ -1,11 +1,17 @@
 <div class="container">
   <div class="main">
     <div class="homeWrapper">
+      <app-profile-skeleton [show]="!userData"></app-profile-skeleton>
       <app-profile
         *ngIf="userData"
         [followers]="userData.followers_count"
         [following]="userData.followings_count"
         [username]="userData.username"
+        [avatar]="userData.avatar"
+        [bio]="userData.bio"
+        [born]="userData.born"
+        [city]="userData.city"
+        [country]="userData.country"
         [created_at]="userData.created_at"
       ></app-profile>
     </div>

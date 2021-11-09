@@ -8,7 +8,7 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
   @Input() followers: number = 0; //
   @Input() following: number = 0; //
-  @Input() username: string = 'hamed'; //
+  @Input() username: string; //
   @Input() avatar: string; //
   @Input() bio: string =
     'Learner at home ,React enthusiast,Kicked out of the University but do not intend to become the next Bill Gates Money with wings  ';

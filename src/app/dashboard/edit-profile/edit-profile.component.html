@@ -1,0 +1,65 @@
+<div class="modalWrapper">
+  <div class="modalContent">
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Fill out your name</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Fill out your City</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" placeholder="Ex.Tehran" />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Fill out your Country</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country" placeholder="Ex.Iran" />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="fourthFormGroup">
+        <form [formGroup]="fourthFormGroup">
+          <ng-template matStepLabel>Fill out your Bio</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Bio</mat-label>
+            <input matInput formControlName="bio" placeholder="..." />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Close</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+@import "../../../styles.scss";
+.modalWrapper {
+  position: relative;
+  background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.15);
+  .modalContent {
+    position: absolute;
+    margin-top: 4rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    max-height: 80vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    @include tablet-up {
+      width: 400px;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.form-field {
+  margin-top: 1rem;
+}

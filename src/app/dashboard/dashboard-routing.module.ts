@@ -1,3 +1,4 @@
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { PostsComponent } from './posts/posts.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: 'followers' },
       { path: 'following' },
       { path: 'create_post' },
+      { path: 'edit_post', component: EditProfileComponent },
     ],
   },
 ];
