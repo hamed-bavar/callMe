@@ -1,5 +1,7 @@
+import { ProfileService } from './../profile.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/user.model';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  userData: User;
+  constructor(
+    private http: HttpClient,
+    private profileService: ProfileService
+  ) {}
 
   ngOnInit(): void {
-    this.http.get('https://callme-back.herokuapp.com/api/profile').subscribe(
-      (e) => console.log('heyyy'),
-      (e) => console.log('error', e)
-    );
+    this.profileService.getProfile().subscribe((data) => {
+      this.userData = data;
+      console.log(data);
+    });
   }
 }

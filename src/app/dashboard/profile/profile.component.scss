@@ -1,0 +1,140 @@
+@import "../../../styles.scss";
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-wrapper {
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
+  @include tablet-up {
+    padding: 1rem 3rem;
+  }
+  section {
+    display: flex;
+    .user-profile {
+      .profile {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        text-align: center;
+        color: white;
+        position: relative;
+        background-image: linear-gradient(
+          to bottom,
+          #181717,
+          #1a1919,
+          #1c1a1b,
+          #1e1c1e,
+          #1f1e20,
+          #212022,
+          #222123,
+          #242325,
+          #262527,
+          #282728,
+          #2a292a,
+          #2c2b2c
+        );
+      }
+    }
+    .user-follow {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 0.5rem;
+      text-transform: capitalize;
+      .user {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+        font-weight: 550;
+      }
+      .follow-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.7rem;
+        .followers {
+          display: flex;
+          margin-right: 0.8rem;
+          font-weight: 500;
+          p {
+            margin-right: 0.3rem;
+          }
+        }
+        .following {
+          display: flex;
+          font-weight: 500;
+          p {
+            margin-right: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+  .infos {
+    & > div {
+      margin-bottom: 0.5rem;
+    }
+    .bio {
+      margin-top: 2rem;
+      margin-left: 0.5rem;
+      margin-bottom: 1rem;
+      color: $lightGray;
+      // font-size: 1.1rem;
+      line-height: 1.5rem;
+    }
+    @include tablet-up {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-left: 3rem;
+    }
+    .location-born {
+      display: flex;
+      align-items: center;
+      .location {
+        @include flex-center;
+        margin-right: 1rem;
+      }
+      .born {
+        @include flex-center;
+        margin-bottom: 0.5rem;
+        p {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+    .join {
+      @include flex-center;
+    }
+  }
+}
+.editBtn {
+  background: transparent;
+  border: 1px solid black;
+  outline: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #1e1c1e;
+  min-width: 5.5rem;
+  @include tablet-up {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background: rgb(240, 236, 236);
+  }
+}
+p {
+  padding: 0;
+  margin: 0;
+  margin-left: 0.15rem;
+}

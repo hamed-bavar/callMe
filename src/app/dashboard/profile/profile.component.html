@@ -1,1 +1,52 @@
-<p>profile works!</p>
+<div class="profile-wrapper">
+  <section>
+    <div class="user-profile">
+      <div class="profile">
+        <img *ngIf="avatar" src="" alt="" />
+        <div *ngIf="!avatar" class="avatarPlaceholder">
+          {{ username.charAt(0) | uppercase }}
+        </div>
+      </div>
+    </div>
+    <div class="user-follow">
+      <div class="user">
+        <p>{{ username }}</p>
+      </div>
+      <div class="follow-wrapper">
+        <div class="followers">
+          <p>followers</p>
+          <span>{{ followers }}</span>
+        </div>
+        <div class="following">
+          <p>following</p>
+          <span> {{ following }}</span>
+        </div>
+      </div>
+      <div *ngIf="isMobile">
+        <button class="editBtn">Edit Profile</button>
+      </div>
+    </div>
+    <div *ngIf="!isMobile">
+      <button class="editBtn">Edit Profile</button>
+    </div>
+  </section>
+  <div class="infos">
+    <div class="bio">
+      <p>{{ bio }}</p>
+    </div>
+    <div class="location-born">
+      <div class="location">
+        <mat-icon color="gray">place</mat-icon>
+        <p>{{ city | uppercase }} , {{ country | uppercase }}</p>
+      </div>
+      <div class="born">
+        <mat-icon>cake</mat-icon>
+        <p>{{ born | date: "MMM d, yyyy" }}</p>
+      </div>
+    </div>
+    <div class="join">
+      <mat-icon>event</mat-icon>
+      <p>joined {{ created_at | date: "MMM d, yyyy" }}</p>
+    </div>
+  </div>
+</div>

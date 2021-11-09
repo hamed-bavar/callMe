@@ -1,6 +1,14 @@
 <div class="container">
   <div class="main">
-    <div class="homeWrapper"><app-profile></app-profile></div>
+    <div class="homeWrapper">
+      <app-profile
+        *ngIf="userData"
+        [followers]="userData.followers_count"
+        [following]="userData.followings_count"
+        [username]="userData.username"
+        [created_at]="userData.created_at"
+      ></app-profile>
+    </div>
     <aside class="options">
       <app-dashboard-options></app-dashboard-options>
     </aside>
