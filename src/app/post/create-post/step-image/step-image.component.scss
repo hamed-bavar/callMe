@@ -1,0 +1,31 @@
+@import "../../../../styles.scss";
+.placeholder {
+  text-align: center;
+  padding-top: 22rem;
+}
+.text {
+  text-align: center;
+  color: $lightGray;
+  letter-spacing: 1.1;
+  line-height: 1.4;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+.file-picker {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  .main {
+    display: none;
+  }
+
+  .picker {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0.4rem 2rem;
+    background: navy;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+}

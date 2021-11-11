@@ -1,0 +1,14 @@
+<div class="modalWrapper" (click)="closePage($event)">
+  <section class="modalContent">
+    <div class="head">
+      <mat-icon>arrow_back</mat-icon>
+      <p>Next</p>
+    </div>
+    <hr />
+    <div (click)="$event.stopPropagation()">
+      <form [formGroup]="demoForm">
+        <file-upload formControlName="files"></file-upload>
+      </form>
+    </div>
+  </section>
+</div>

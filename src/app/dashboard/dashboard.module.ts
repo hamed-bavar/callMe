@@ -4,16 +4,15 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
-import { PostsComponent } from './posts/posts.component';
 import { DashboardOptionsComponent } from './dashboard-options/dashboard-options.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileSkeletonComponent } from './profile-skeleton/profile-skeleton.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostModule } from '../post/post.module';
 @NgModule({
   declarations: [
     HomeComponent,
-    PostsComponent,
     DashboardOptionsComponent,
     ProfileComponent,
     ProfileSkeletonComponent,
@@ -24,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    PostModule,
   ],
   providers: [],
 })

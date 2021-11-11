@@ -70,10 +70,10 @@
 }
 .btn-createPost {
   position: fixed;
-  right: 30px;
-  bottom: 100px;
-  width: 80px;
-  height: 80px;
+  right: 12px;
+  bottom: 70px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   background: $secondary;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -82,9 +82,16 @@
   justify-content: center;
   color: white;
   cursor: pointer;
+  overflow: hidden;
   &:hover {
     transform: scale(1.05);
     transition: transform 0.8s;
+  }
+  @include tablet-up {
+    width: 80px;
+    height: 80px;
+    right: 30px;
+    bottom: 100px;
   }
 }
 .icon {

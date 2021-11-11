@@ -1,12 +1,22 @@
 <div class="profile-wrapper" (click)="$event.stopPropagation()">
   <section (click)="$event.stopPropagation()">
     <div class="user-profile" (click)="$event.stopPropagation()">
-      <div class="profile" [ngClass]="{ 'img-preview': file || avatar }">
+      <div
+        class="profile"
+        [ngClass]="{
+          'img-preview': file || avatar !== 'https://callme-back.herokuapp.com'
+        }"
+      >
         <div class="avatarPlaceholder">
           {{ username.charAt(0) | uppercase }}
         </div>
       </div>
-      <div class="profile" [ngClass]="{ 'img-preview': !file && !avatar }">
+      <div
+        class="profile"
+        [ngClass]="{
+          'img-preview': !file && avatar == 'https://callme-back.herokuapp.com'
+        }"
+      >
         <img
           class="avatarPlaceholder img-preview-view"
           [src]="this.avatar"
