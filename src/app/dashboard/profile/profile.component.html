@@ -1,11 +1,30 @@
-<div class="profile-wrapper">
-  <section>
-    <div class="user-profile">
-      <div class="profile">
-        <img *ngIf="avatar" src="" alt="" />
-        <div *ngIf="!avatar" class="avatarPlaceholder">
+<div class="profile-wrapper" (click)="$event.stopPropagation()">
+  <section (click)="$event.stopPropagation()">
+    <div class="user-profile" (click)="$event.stopPropagation()">
+      <div class="profile" [ngClass]="{ 'img-preview': file || avatar }">
+        <div class="avatarPlaceholder">
           {{ username.charAt(0) | uppercase }}
         </div>
+      </div>
+      <div class="profile" [ngClass]="{ 'img-preview': !file && !avatar }">
+        <img
+          class="avatarPlaceholder img-preview-view"
+          [src]="this.avatar"
+          #imagePreview
+        />
+      </div>
+      <div class="profile-edit">
+        <mat-icon (click)="editPhoto()">mode</mat-icon
+        ><input
+          type="file"
+          class="input-file"
+          #fileInput
+          (change)="getImageFile($event)"
+        />
+      </div>
+      <div *ngIf="file" class="icons-wrapper">
+        <mat-icon class="icon" (click)="cancelImage()">cancel</mat-icon>
+        <mat-icon class="icon" (click)="confirmImage()">check_circle</mat-icon>
       </div>
     </div>
     <div class="user-follow">
@@ -23,11 +42,11 @@
         </div>
       </div>
       <div *ngIf="isMobile">
-        <button class="editBtn">Edit Profile</button>
+        <button class="editBtn" (click)="goToEditPage()">Edit Profile</button>
       </div>
     </div>
     <div *ngIf="!isMobile">
-      <button class="editBtn">Edit Profile</button>
+      <button class="editBtn" (click)="goToEditPage()">Edit Profile</button>
     </div>
   </section>
   <div class="infos">
@@ -37,7 +56,7 @@
     <div class="location-born">
       <div class="location" *ngIf="country !== '' || city !== ''">
         <mat-icon color="gray">place</mat-icon>
-        <p>{{ city | uppercase }} , {{ country | uppercase }}</p>
+        <p>{{ city }} , {{ country }}</p>
       </div>
       <div class="born" *ngIf="born !== null">
         <mat-icon>cake</mat-icon>
@@ -46,7 +65,7 @@
     </div>
     <div class="join">
       <mat-icon>event</mat-icon>
-      <p>joined {{ created_at | date: "MMM d, yyyy" }}</p>
+      <p>Joined {{ created_at | date: "MMM d, yyyy" }}</p>
     </div>
   </div>
 </div>

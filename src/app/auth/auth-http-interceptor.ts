@@ -24,9 +24,7 @@ export class AuthHttpInterceptor implements HttpInterceptor {
       return next.handle(httpRequest);
     }
     return this.AuthService.token$.pipe(
-      tap((value) => {
-        console.log(value, 'value');
-      }),
+      tap((value) => {}),
       <any>skipWhile((value) => value === null),
       map((token: string) => {
         return httpRequest.clone({

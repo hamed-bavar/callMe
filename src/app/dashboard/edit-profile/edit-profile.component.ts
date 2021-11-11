@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProfileService } from './../profile.service';
+import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
 
 @Component({
   selector: 'app-edit-profile',
@@ -8,23 +11,39 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditProfileComponent implements OnInit {
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup: FormGroup;
-  fourthFormGroup: FormGroup;
-  constructor(private _formBuilder: FormBuilder) {}
+  formGroup: FormGroup;
+  constructor(
+    private _formBuilder: FormBuilder,
+    private router: Router,
+    private profileService: ProfileService,
+    private el: ElementRef
+  ) {}
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
+    document.body.appendChild(this.el.nativeElement);
+    this.formGroup = this._formBuilder.group({
       name: [''],
-    });
-    this.secondFormGroup = this._formBuilder.group({
       city: [''],
-    });
-    this.thirdFormGroup = this._formBuilder.group({
       country: [''],
-    });
-    this.fourthFormGroup = this._formBuilder.group({
       bio: [''],
+      born: [''],
     });
+    this.profileService.getProfile().subscribe((res) => {
+      this.formGroup.setValue({
+        name: res.name,
+        city: res.city,
+        country: res.country,
+        bio: res.bio,
+        born: res.born,
+      });
+    });
+  }
+  closePage(event: any) {
+    event.stopPropagation();
+    this.router.navigateByUrl('/dashboard');
+  }
+  submitForm(event: any, type: string) {
+    this.profileService
+      .editProfile(type, this.formGroup.value[type])
+      .subscribe((e) => console.log('e'));
   }
 }

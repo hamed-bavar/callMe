@@ -11,7 +11,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingComponent } from './loading/loading.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { MatStepperModule } from '@angular/material/stepper';
-
 const materialComponents = [
   MatIconModule,
   MatCardModule,

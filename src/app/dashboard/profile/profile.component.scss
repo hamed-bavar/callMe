@@ -12,6 +12,7 @@
   }
   section {
     display: flex;
+    position: relative;
     .user-profile {
       .profile {
         width: 100px;
@@ -23,6 +24,7 @@
         font-size: 3rem;
         text-align: center;
         color: white;
+        border: 2px solid black;
         position: relative;
         background-image: linear-gradient(
           to bottom,
@@ -39,6 +41,22 @@
           #2a292a,
           #2c2b2c
         );
+      }
+      .img-preview-view {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .profile-edit {
+        position: absolute;
+        top: -5px;
+        left: -10px;
+        color: rgb(13, 13, 158);
+        cursor: pointer;
+        .input-file {
+          display: none;
+        }
       }
     }
     .user-follow {
@@ -83,9 +101,9 @@
       margin-top: 2rem;
       margin-left: 0.5rem;
       margin-bottom: 1rem;
-      color: $lightGray;
       // font-size: 1.1rem;
       line-height: 1.5rem;
+      text-transform: capitalize;
     }
     @include tablet-up {
       font-size: 1.1rem;
@@ -95,20 +113,28 @@
     .location-born {
       display: flex;
       align-items: center;
+
       .location {
         @include flex-center;
         margin-right: 1rem;
+        p {
+          color: $lightGray;
+        }
       }
       .born {
         @include flex-center;
         margin-bottom: 0.5rem;
         p {
           margin-top: 0.5rem;
+          color: $lightGray;
         }
       }
     }
     .join {
       @include flex-center;
+      p {
+        color: $lightGray;
+      }
     }
   }
 }
@@ -137,4 +163,14 @@ p {
   padding: 0;
   margin: 0;
   margin-left: 0.15rem;
+}
+.img-preview {
+  display: none !important;
+}
+.icons-wrapper {
+  position: absolute;
+}
+.icon {
+  color: navy;
+  cursor: pointer;
 }

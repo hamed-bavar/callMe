@@ -68,3 +68,26 @@
     border: none;
   }
 }
+.btn-createPost {
+  position: fixed;
+  right: 30px;
+  bottom: 100px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: $secondary;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.8s;
+  }
+}
+.icon {
+  transform: scale(1.4);
+  color: white !important;
+}

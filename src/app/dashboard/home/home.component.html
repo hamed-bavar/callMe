@@ -1,9 +1,9 @@
 <div class="container">
   <div class="main">
     <div class="homeWrapper">
-      <app-profile-skeleton [show]="!userData"></app-profile-skeleton>
+      <app-profile-skeleton [show]="loading"></app-profile-skeleton>
       <app-profile
-        *ngIf="userData"
+        *ngIf="!loading && userData"
         [followers]="userData.followers_count"
         [following]="userData.followings_count"
         [username]="userData.username"

@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: 'followers' },
       { path: 'following' },
       { path: 'create_post' },
-      { path: 'edit_post', component: EditProfileComponent },
+      { path: 'edit_profile', component: EditProfileComponent },
     ],
   },
 ];
