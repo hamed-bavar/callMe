@@ -1,4 +1,6 @@
 @import "../../../styles.scss";
+@import "~swiper/css";
+@import "~swiper/css/navigation";
 :host {
   position: absolute;
   top: 0;
@@ -29,18 +31,25 @@
     animation-duration: 0.32s;
     animation-timing-function: linear;
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 1100px;
     &::-webkit-scrollbar {
       display: none;
     }
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none;
     .head {
       padding: 0.7rem 1rem;
       font-weight: bold;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: navy;
+      font-weight: bold;
       button {
         background: transparent;
         border: none;
@@ -51,8 +60,56 @@
         cursor: pointer;
       }
     }
+    .create-post-wrapper {
+      width: 100%;
+      height: 90%;
+      @include medium-up {
+        display: flex;
+      }
+      .slider-uploader {
+        @include medium-up {
+          width: 70%;
+        }
+        height: 100%;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        -ms-overflow-style: none; /* for Internet Explorer, Edge */
+        scrollbar-width: none;
+      }
+      .create-posts-inputs {
+        @include medium-up {
+          width: 30%;
+        }
+        .btn {
+          margin-left: 2.5rem;
+          background: white;
+          outline: none;
+          border: none;
+          padding: 0.6rem 2rem;
+          border-radius: 4px;
+          border: 1px solid #b3acac;
+          cursor: pointer;
+          font-weight: 1.5;
+          font-size: 1.05rem;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+            0 1px 2px rgba(0, 0, 0, 0.24);
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          margin-bottom: 1rem;
+          &:hover {
+            background-color: rgb(92, 92, 226);
+            color: white;
+          }
+        }
+      }
+    }
   }
 }
+
 @keyframes anim {
   0% {
     transform: scale(0.9);

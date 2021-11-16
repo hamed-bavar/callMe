@@ -12,18 +12,24 @@
       <button color="primary" (click)="submitForm()" type="submit">Post</button>
     </div>
     <hr />
-    <div (click)="$event.stopPropagation()">
-      <app-expansion-panel
-        [titlec]="$any(postForm).get('title')"
-        [descriptionc]="$any(postForm).get('description')"
-        [privatec]="$any(postForm).get('private')"
-        [tagc]="$any(postForm).get('tag')"
-      ></app-expansion-panel>
-    </div>
-    <div (click)="$event.stopPropagation()">
-      <app-image-uploader
-        [filesControl]="$any(postForm).get('photos')"
-      ></app-image-uploader>
+    <div class="create-post-wrapper">
+      <div class="slider-uploader">
+        <app-slider [photos]="files" class="slider"></app-slider>
+        <div (click)="$event.stopPropagation()">
+          <app-image-uploader
+            [filesControl]="$any(postForm).get('photos')"
+          ></app-image-uploader>
+        </div>
+      </div>
+      <div class="create-posts-inputs">
+        <app-create-post-inputs
+          [titleControl]="$any(postForm).get('title')"
+          [descriptionControl]="$any(postForm).get('description')"
+          [privateControl]="$any(postForm).get('private')"
+          [tagsControl]="$any(postForm).get('tags')"
+        ></app-create-post-inputs>
+        <button class="btn">Create Post</button>
+      </div>
     </div>
   </form>
 </div>

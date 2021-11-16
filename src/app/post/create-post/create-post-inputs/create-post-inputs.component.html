@@ -1,0 +1,32 @@
+<div class="container">
+  <app-create-post-individual-inputs head="Title">
+    <input
+      type="text"
+      class="input"
+      placeholder="Add a Title"
+      [formControl]="titleControl"
+    />
+  </app-create-post-individual-inputs>
+  <app-create-post-individual-inputs head="Caption"
+    ><input
+      type="text"
+      class="input"
+      placeholder="Add a Cation"
+      [formControl]="descriptionControl"
+  /></app-create-post-individual-inputs>
+  <app-create-post-individual-inputs head="Privacy"
+    ><mat-slide-toggle
+      [(ngModel)]="isChecked"
+      class="margin-left"
+      [formControl]="privateControl"
+      >{{ isChecked ? "Public" : "Private" }}</mat-slide-toggle
+    >
+  </app-create-post-individual-inputs>
+  <app-create-post-individual-inputs head="Hashtag"
+    ><input
+      type="text"
+      class="input"
+      placeholder="Add Hashtags"
+      [formControl]="tagsControl"
+  /></app-create-post-individual-inputs>
+</div>

@@ -1,0 +1,24 @@
+@import "../../../../styles.scss";
+.container {
+  .input {
+    border: none;
+    outline: none;
+    width: 90%;
+    max-width: 300px;
+    padding: 0.8rem 0;
+    padding-left: 0.7rem;
+    border-radius: 4px;
+    border: 1px solid #b3acac;
+    margin-left: 1.5rem;
+    &:focus {
+      border: 1px solid #222121;
+      outline: none;
+    }
+    &::placeholder {
+      color: #b3acac;
+    }
+  }
+}
+.margin-left {
+  margin-left: 1.5rem;
+}

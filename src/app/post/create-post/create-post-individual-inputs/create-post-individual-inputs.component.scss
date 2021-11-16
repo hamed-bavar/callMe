@@ -1,0 +1,27 @@
+@import "../../../../styles.scss";
+.wrapper {
+  line-height: 1.7;
+  cursor: pointer;
+  .not-expand {
+    border-bottom: 2px solid #bdbcbc;
+  }
+  & > div {
+    height: 40px;
+    background: white;
+    display: flex;
+    align-items: center;
+    p {
+      color: #4b4848;
+      letter-spacing: 0.7px;
+      margin-left: 0.2rem;
+    }
+    .bold {
+      font-weight: bold;
+      color: black;
+    }
+  }
+  .expanded {
+    height: 80px;
+    transform-origin: bottom;
+  }
+}

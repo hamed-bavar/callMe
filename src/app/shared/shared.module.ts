@@ -13,6 +13,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 const materialComponents = [
   MatIconModule,
@@ -23,6 +24,7 @@ const materialComponents = [
   MatProgressSpinnerModule,
   MatStepperModule,
   MatRadioModule,
+  MatSlideToggleModule,
 ];
 @NgModule({
   declarations: [InputComponent, LoadingComponent],

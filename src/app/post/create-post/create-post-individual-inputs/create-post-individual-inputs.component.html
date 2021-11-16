@@ -1,0 +1,16 @@
+<div class="wrapper" (click)="toggle($event)">
+  <div class="not-expand">
+    <mat-icon *ngIf="open">keyboard_arrow_down</mat-icon>
+    <mat-icon *ngIf="!open">keyboard_arrow_up</mat-icon>
+    <p *ngIf="head === 'Title' || head == 'Caption'" [ngClass]="{ bold: open }">
+      Write a {{ head }}
+    </p>
+    <p *ngIf="head === 'Privacy'" [ngClass]="{ bold: open }">
+      Select your {{ head }}
+    </p>
+    <p *ngIf="head === 'Hashtag'" [ngClass]="{ bold: open }">Add {{ head }}</p>
+  </div>
+  <div *ngIf="open" class="expanded" (click)="$event.stopPropagation()">
+    <ng-content></ng-content>
+  </div>
+</div>

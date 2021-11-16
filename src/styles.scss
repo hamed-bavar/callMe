@@ -3,7 +3,8 @@ $primary: white;
 $secondary: #5e17eb;
 $secondaryPlus: #313131;
 $lightGray: rgb(68, 68, 68);
-* {
+*,
+p {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -30,6 +31,11 @@ a {
 }
 @mixin tablet-up {
   @media (min-width: 650px) {
+    @content;
+  }
+}
+@mixin medium-up {
+  @media (min-width: 780px) {
     @content;
   }
 }
