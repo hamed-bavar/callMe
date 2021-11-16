@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StepImageComponent } from './step-image.component';
+import { ExpansionPanelComponent } from './expansion-panel.component';
 
-describe('StepImageComponent', () => {
-  let component: StepImageComponent;
-  let fixture: ComponentFixture<StepImageComponent>;
+describe('ExpansionPanelComponent', () => {
+  let component: ExpansionPanelComponent;
+  let fixture: ComponentFixture<ExpansionPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StepImageComponent ]
+      declarations: [ ExpansionPanelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StepImageComponent);
+    fixture = TestBed.createComponent(ExpansionPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

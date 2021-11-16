@@ -6,14 +6,14 @@ import { FileUploadModule } from '@iplab/ngx-file-upload';
 import { PostRoutingModule } from './post-routing.module';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { GetPostsComponent } from './get-posts/get-posts.component';
-import { StepImageComponent } from './create-post/step-image/step-image.component';
-import { StepCompleteComponent } from './create-post/step-complete/step-complete.component';
+import { ImageUploaderComponent } from './create-post/image-uploader/image-uploader.component';
+import { ExpansionPanelComponent } from './create-post/expansion-panel/expansion-panel.component';
 @NgModule({
   declarations: [
     CreatePostComponent,
     GetPostsComponent,
-    StepImageComponent,
-    StepCompleteComponent,
+    ImageUploaderComponent,
+    ExpansionPanelComponent,
   ],
   imports: [
     CommonModule,

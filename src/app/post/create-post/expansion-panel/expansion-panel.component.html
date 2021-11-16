@@ -1,0 +1,62 @@
+<div
+  class="example-action-buttons flex"
+  (click)="$event.stopPropagation()"
+></div>
+<div class="example">
+  <mat-accordion class="example-headers-align" multi id="accor">
+    <mat-expansion-panel class="panel">
+      <mat-expansion-panel-header class="head">
+        <mat-panel-title class="title"> Title </mat-panel-title>
+        <mat-panel-description class="desc">
+          <mat-icon> insert_photo</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field appearance="fill">
+        <mat-label>title</mat-label>
+        <input matInput type="text" [formControl]="titlec" class="field" />
+      </mat-form-field>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="panel">
+      <mat-expansion-panel-header class="head">
+        <mat-panel-title> Description </mat-panel-title>
+        <mat-panel-description class="desc">
+          <mat-icon> description</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" [formControl]="descriptionc" />
+      </mat-form-field>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="panel" [expanded]="true">
+      <mat-expansion-panel-header class="head">
+        <mat-panel-title> Set Privacy </mat-panel-title>
+        <mat-panel-description class="desc">
+          <mat-icon> public</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-radio-group
+        aria-label="Select an option"
+        [formControl]="privatec"
+        required
+      >
+        <mat-radio-button [value]="false" style="margin-right: 0.5rem"
+          >Public</mat-radio-button
+        >
+        <mat-radio-button [value]="true">Private</mat-radio-button>
+      </mat-radio-group>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="panel">
+      <mat-expansion-panel-header class="head">
+        <mat-panel-title> tag </mat-panel-title>
+        <mat-panel-description class="desc">
+          <mat-icon> map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field appearance="fill">
+        <mat-label>tag</mat-label>
+        <input matInput [formControl]="tagc" required />
+      </mat-form-field>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

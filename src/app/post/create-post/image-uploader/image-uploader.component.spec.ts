@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StepCompleteComponent } from './step-complete.component';
+import { ImageUploaderComponent } from './image-uploader.component';
 
-describe('StepCompleteComponent', () => {
-  let component: StepCompleteComponent;
-  let fixture: ComponentFixture<StepCompleteComponent>;
+describe('ImageUploaderComponent', () => {
+  let component: ImageUploaderComponent;
+  let fixture: ComponentFixture<ImageUploaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StepCompleteComponent ]
+      declarations: [ ImageUploaderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StepCompleteComponent);
+    fixture = TestBed.createComponent(ImageUploaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

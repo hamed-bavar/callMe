@@ -1,14 +1,29 @@
 <div class="modalWrapper" (click)="closePage($event)">
-  <section class="modalContent">
-    <div class="head">
-      <mat-icon>arrow_back</mat-icon>
-      <p>Next</p>
+  <form
+    class="modalContent"
+    (click)="$event.stopPropagation()"
+    (ngSubmit)="submitForm()"
+    [formGroup]="postForm"
+  >
+    <div class="head" (click)="$event.stopPropagation()">
+      <mat-icon color="primary" (click)="closePage($event)"
+        >arrow_back</mat-icon
+      >
+      <button color="primary" (click)="submitForm()" type="submit">Post</button>
     </div>
     <hr />
     <div (click)="$event.stopPropagation()">
-      <form [formGroup]="demoForm">
-        <file-upload formControlName="files"></file-upload>
-      </form>
+      <app-expansion-panel
+        [titlec]="$any(postForm).get('title')"
+        [descriptionc]="$any(postForm).get('description')"
+        [privatec]="$any(postForm).get('private')"
+        [tagc]="$any(postForm).get('tag')"
+      ></app-expansion-panel>
     </div>
-  </section>
+    <div (click)="$event.stopPropagation()">
+      <app-image-uploader
+        [filesControl]="$any(postForm).get('photos')"
+      ></app-image-uploader>
+    </div>
+  </form>
 </div>

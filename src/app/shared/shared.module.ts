@@ -11,6 +11,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingComponent } from './loading/loading.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatRadioModule } from '@angular/material/radio';
+
 const materialComponents = [
   MatIconModule,
   MatCardModule,
@@ -19,6 +22,7 @@ const materialComponents = [
   MatSnackBarModule,
   MatProgressSpinnerModule,
   MatStepperModule,
+  MatRadioModule,
 ];
 @NgModule({
   declarations: [InputComponent, LoadingComponent],
@@ -33,6 +37,7 @@ const materialComponents = [
     InputComponent,
     LoadingComponent,
     NgxSkeletonLoaderModule,
+    MatExpansionModule,
   ],
 })
 export class SharedModule {}

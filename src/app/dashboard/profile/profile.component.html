@@ -4,7 +4,7 @@
       <div
         class="profile"
         [ngClass]="{
-          'img-preview': file || avatar !== 'https://callme-back.herokuapp.com'
+          'img-preview': file || avatar !== ''
         }"
       >
         <div class="avatarPlaceholder">
@@ -14,7 +14,7 @@
       <div
         class="profile"
         [ngClass]="{
-          'img-preview': !file && avatar == 'https://callme-back.herokuapp.com'
+          'img-preview': !file && avatar == ''
         }"
       >
         <img

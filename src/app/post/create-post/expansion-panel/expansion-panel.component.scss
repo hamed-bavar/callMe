@@ -1,0 +1,49 @@
+@import "../../../../styles.scss";
+:host {
+}
+* {
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 1rem;
+  margin-bottom: 2rem;
+  color: navy;
+  & > * {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+.panel {
+  background-color: #f1f1f1;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.28);
+  .head {
+    .title {
+    }
+  }
+}
+.example {
+  padding: 0.2rem 2rem;
+}
+.btn {
+  padding: 0.1rem 0.4rem;
+  background-image: linear-gradient(to right, #895cf2 0%, #582ac4 100%);
+  &:hover {
+    background-image: linear-gradient(to left, #895cf2 0%, #582ac4 100%);
+  }
+  @include tablet-up {
+    padding: 0.2rem 1.2rem;
+  }
+}
+.desc {
+  display: flex;
+  justify-content: flex-end;
+  .mat-icon {
+    color: rgb(51, 45, 45) !important;
+  }
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white;
+  border-radius: 5px;
+}

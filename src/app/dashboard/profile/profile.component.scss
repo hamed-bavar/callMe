@@ -99,7 +99,7 @@
       margin-bottom: 0.5rem;
     }
     .bio {
-      margin-top: 2rem;
+      margin-top: 0.5rem;
       margin-left: 0.5rem;
       margin-bottom: 1rem;
       // font-size: 1.1rem;
@@ -109,7 +109,6 @@
     @include tablet-up {
       font-size: 1.1rem;
       line-height: 2;
-      margin-left: 3rem;
     }
     .location-born {
       display: flex;
@@ -118,6 +117,7 @@
       .location {
         @include flex-center;
         margin-right: 1rem;
+        margin-left: 0.2rem;
         p {
           color: $lightGray;
         }
@@ -133,6 +133,7 @@
     }
     .join {
       @include flex-center;
+      margin-left: 0.2rem;
       p {
         color: $lightGray;
       }

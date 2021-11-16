@@ -12,12 +12,12 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./create-post.component.scss'],
 })
 export class CreatePostComponent implements OnInit {
-  private filesControl = new FormControl(
-    null,
-    FileUploadValidators.filesLimit(2)
-  );
-  public demoForm = new FormGroup({
-    files: this.filesControl,
+  postForm = new FormGroup({
+    photos: new FormControl(null, FileUploadValidators.filesLimit(4)),
+    title: new FormControl(''),
+    description: new FormControl(''),
+    private: new FormControl(true),
+    tag: new FormControl('noice'),
   });
 
   constructor(private el: ElementRef, private router: Router) {}
@@ -28,5 +28,9 @@ export class CreatePostComponent implements OnInit {
   closePage(event: any) {
     event.stopPropagation();
     this.router.navigateByUrl('/dashboard');
+  }
+  submitForm() {
+    console.log('submit it');
+    console.log(this.postForm.value);
   }
 }
