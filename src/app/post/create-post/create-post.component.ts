@@ -1,16 +1,10 @@
 import { Router } from '@angular/router';
-import {
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
-import {
-  FileUploadControl,
-  FileUploadValidators,
-} from '@iplab/ngx-file-upload';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { FileUploadValidators } from '@iplab/ngx-file-upload';
 import { FormControl, FormGroup } from '@angular/forms';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-create-post',
@@ -24,9 +18,14 @@ export class CreatePostComponent implements OnInit {
     title: new FormControl(''),
     description: new FormControl(''),
     private: new FormControl(true),
-    tags: new FormControl('noice'),
+    keywords: new FormControl(''),
   });
-  constructor(private el: ElementRef, private router: Router) {
+  constructor(
+    private el: ElementRef,
+    private router: Router,
+    private postService: PostService,
+    private _snackBar: MatSnackBar
+  ) {
     this.postForm.get('photos')!.valueChanges.subscribe((photos) => {
       let UrlObjectArray = photos.map((photo: any) =>
         URL.createObjectURL(photo)
@@ -43,6 +42,18 @@ export class CreatePostComponent implements OnInit {
     this.router.navigateByUrl('/dashboard');
   }
   submitForm() {
-    console.log(this.postForm.value);
+    this.postService.createPost(this.postForm.value).subscribe(
+      (res) => {
+        this.router.navigateByUrl('/dashboard');
+        this.postForm.reset();
+      },
+      (err) => {
+        console.log(err);
+        if (err.error.description) {
+          err.error.description = 'please fill all inputs';
+        }
+        this._snackBar.open(err.error.description, 'close', {});
+      }
+    );
   }
 }

@@ -16,9 +16,5 @@ SwiperCore.use([Navigation]);
 export class SliderComponent implements OnInit {
   @Input() photos: any = [];
   constructor() {}
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-    // changes.prop contains the old and the new value...
-  }
   ngOnInit(): void {}
 }

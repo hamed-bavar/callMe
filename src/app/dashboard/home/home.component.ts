@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
         if (event.url === '/dashboard') {
           this.loading = true;
           this.profileService.getProfile().subscribe((data) => {
-            console.log('data i want', data);
             this.loading = false;
             this.userData = data;
           });

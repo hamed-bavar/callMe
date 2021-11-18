@@ -60,7 +60,6 @@ export class ProfileComponent implements OnInit {
   }
   confirmImage() {
     this.profileService.editImage(this.file).subscribe((e) => {
-      console.log('avatar');
       this.avatar = e.avatar;
       this.file = undefined;
     });
