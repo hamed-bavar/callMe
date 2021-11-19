@@ -27,10 +27,12 @@ export class CreatePostComponent implements OnInit {
     private _snackBar: MatSnackBar
   ) {
     this.postForm.get('photos')!.valueChanges.subscribe((photos) => {
-      let UrlObjectArray = photos.map((photo: any) =>
-        URL.createObjectURL(photo)
-      );
-      this.files = UrlObjectArray;
+      if (photos) {
+        let UrlObjectArray = photos.map((photo: any) =>
+          URL.createObjectURL(photo)
+        );
+        this.files = UrlObjectArray;
+      }
     });
   }
 
