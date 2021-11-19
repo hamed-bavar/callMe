@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FileUploadValidators } from '@iplab/ngx-file-upload';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostService } from '../post.service';
 
 @Component({
@@ -15,10 +15,10 @@ export class CreatePostComponent implements OnInit {
   files: any = [];
   postForm = new FormGroup({
     photos: new FormControl(null, FileUploadValidators.filesLimit(4)),
-    title: new FormControl(''),
-    description: new FormControl(''),
-    private: new FormControl(true),
-    keywords: new FormControl(''),
+    title: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
+    private: new FormControl(true, Validators.required),
+    keywords: new FormControl('', Validators.required),
   });
   constructor(
     private el: ElementRef,
@@ -44,18 +44,22 @@ export class CreatePostComponent implements OnInit {
     this.router.navigateByUrl('/dashboard');
   }
   submitForm() {
-    this.postService.createPost(this.postForm.value).subscribe(
-      (res) => {
-        this.router.navigateByUrl('/dashboard');
-        this.postForm.reset();
-      },
-      (err) => {
-        console.log(err);
-        if (err.error.description) {
-          err.error.description = 'please fill all inputs';
+    if (this.postForm.valid) {
+      this.postService.createPost(this.postForm.value).subscribe(
+        (res) => {
+          this.router.navigateByUrl('/dashboard');
+          this.postForm.reset();
+        },
+        (err) => {
+          console.log(err);
+          if (err.error.description) {
+            err.error.description = 'please fill all inputs';
+          }
+          this._snackBar.open(err.error.description, 'close', {});
         }
-        this._snackBar.open(err.error.description, 'close', {});
-      }
-    );
+      );
+    } else {
+      this._snackBar.open('please fill all inputs', 'close', {});
+    }
   }
 }
