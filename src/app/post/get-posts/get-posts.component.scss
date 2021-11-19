@@ -1,0 +1,23 @@
+@import "../../../styles.scss";
+.get-posts-container {
+  padding-top: 2rem;
+  @include desktop-up {
+    margin-left: 17.2rem;
+  }
+  .skeletons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include tablet-up {
+      justify-content: flex-start;
+      & > * {
+        flex: 0 1 50%;
+      }
+    }
+    @include desktop-up {
+      & > * {
+        flex: 0 1 32%;
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@
       [(ngModel)]="isChecked"
       class="margin-left"
       [formControl]="privateControl"
-      >{{ isChecked ? "Public" : "Private" }}</mat-slide-toggle
+      >{{ !isChecked ? "Public" : "Private" }}</mat-slide-toggle
     >
   </app-create-post-individual-inputs>
   <app-create-post-individual-inputs head="Hashtag"

@@ -71,7 +71,7 @@
 .btn-createPost {
   position: fixed;
   right: 12px;
-  bottom: 70px;
+  bottom: 60px;
   width: 65px;
   height: 65px;
   border-radius: 50%;
@@ -83,6 +83,7 @@
   color: white;
   cursor: pointer;
   overflow: hidden;
+  z-index: 11;
   &:hover {
     transform: scale(1.05);
     transition: transform 0.8s;
@@ -91,7 +92,7 @@
     width: 80px;
     height: 80px;
     right: 30px;
-    bottom: 100px;
+    bottom: 80px;
   }
 }
 .icon {

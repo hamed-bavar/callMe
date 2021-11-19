@@ -12,6 +12,8 @@ import { SafeResourceUrlPipe } from './safe-resource-url.pipe';
 import { SliderComponent } from './create-post/slider/slider.component';
 import { CreatePostInputsComponent } from './create-post/create-post-inputs/create-post-inputs.component';
 import { CreatePostIndividualInputsComponent } from './create-post/create-post-individual-inputs/create-post-individual-inputs.component';
+import { PostSkeletonComponent } from './post-skeleton/post-skeleton.component';
+import { ThumbnailComponent } from './get-posts/thumbnail/thumbnail.component';
 @NgModule({
   declarations: [
     CreatePostComponent,
@@ -21,6 +23,8 @@ import { CreatePostIndividualInputsComponent } from './create-post/create-post-i
     SafeResourceUrlPipe,
     CreatePostInputsComponent,
     CreatePostIndividualInputsComponent,
+    PostSkeletonComponent,
+    ThumbnailComponent,
   ],
   imports: [
     CommonModule,

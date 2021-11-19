@@ -1,1 +1,14 @@
-<p>get-posts works!</p>
+<div class="get-posts-container">
+  <div class="skeletons" *ngIf="loading">
+    <app-post-skeleton *ngFor="let item of skeletons"></app-post-skeleton>
+  </div>
+  <div *ngIf="!loading">
+    <ng-container *ngFor="let thumbnail of thumbnails">
+      <app-thumbnail
+        [id]="thumbnail.ID"
+        [title]="thumbnail.title"
+        [keywords]="thumbnail.keywords"
+      ></app-thumbnail>
+    </ng-container>
+  </div>
+</div>

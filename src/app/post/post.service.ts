@@ -1,13 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-interface PostData {
-  title: string;
-  description: string;
-  photos: any[];
-  private: boolean;
-  keywords: string;
-}
+import { PostData, Thumbnail } from '../shared/post.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +11,8 @@ export class PostService {
 
   createPost(postData: PostData) {
     return this.http.post(this.url + '/post', postData);
+  }
+  getPosts() {
+    return this.http.get<Thumbnail[]>(this.url + '/posts');
   }
 }

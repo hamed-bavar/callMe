@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
       }
     });
   }
-
   ngOnInit(): void {
     // this.profileService.getProfile().subscribe((data) => {
     //   this.userData = data;
