@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ThumbnailComponent implements OnInit {
   @Input() id: number;
   @Input() title: string;
-  @Input() keywords: string;
+  @Input() description: string;
   @Input() imageUrl: string;
   constructor() {}
 

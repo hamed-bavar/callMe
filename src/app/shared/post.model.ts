@@ -7,6 +7,7 @@ export interface PostData {
 }
 export interface Thumbnail {
   ID: number;
-  keywords: string;
+  description: string;
   title: string;
+  photos: { path: string }[];
 }

@@ -3,12 +3,15 @@
     <app-post-skeleton *ngFor="let item of skeletons"></app-post-skeleton>
   </div>
   <div *ngIf="!loading">
-    <ng-container *ngFor="let thumbnail of thumbnails">
-      <app-thumbnail
-        [id]="thumbnail.ID"
-        [title]="thumbnail.title"
-        [keywords]="thumbnail.keywords"
-      ></app-thumbnail>
-    </ng-container>
+    <div class="tmnails">
+      <ng-container *ngFor="let thumbnail of thumbnails">
+        <app-thumbnail
+          [id]="thumbnail.ID"
+          [title]="thumbnail.title"
+          [description]="thumbnail.description"
+          [imageUrl]="thumbnail.photos[0].path"
+        ></app-thumbnail>
+      </ng-container>
+    </div>
   </div>
 </div>

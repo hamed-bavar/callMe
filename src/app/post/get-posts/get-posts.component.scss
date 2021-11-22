@@ -4,10 +4,14 @@
   @include desktop-up {
     margin-left: 17.2rem;
   }
-  .skeletons {
+  .skeletons,
+  .tmnails {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    & > * {
+      flex: 0 1 100%;
+    }
     @include tablet-up {
       justify-content: flex-start;
       & > * {
