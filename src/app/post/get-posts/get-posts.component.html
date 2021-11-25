@@ -3,7 +3,7 @@
     <app-post-skeleton *ngFor="let item of skeletons"></app-post-skeleton>
   </div>
   <div *ngIf="!loading">
-    <div class="tmnails">
+    <div class="tmnails" *ngIf="thumbnails.length !== 0">
       <ng-container *ngFor="let thumbnail of thumbnails">
         <app-thumbnail
           [id]="thumbnail.ID"
@@ -12,6 +12,15 @@
           [imageUrl]="thumbnail.photos[0].path"
         ></app-thumbnail>
       </ng-container>
+    </div>
+    <div *ngIf="thumbnails.length === 0" class="img-wrapper">
+      <img
+        class="q-image qu-mb--tiny"
+        src="//qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.empty_states.dormant_lightmode.png-26-c4532c98034818a0.png"
+        width="100px"
+        style="box-sizing: border-box; max-width: 100%; width: 100px"
+      />
+      <p>You have not created a post yet</p>
     </div>
   </div>
 </div>

@@ -18,7 +18,6 @@ export class GetPostsComponent implements OnInit {
       (res) => {
         this.loading = false;
         this.thumbnails = res;
-        console.log(res);
       },
       (err) => {
         this.snack.open(err.error.description, 'close', {});

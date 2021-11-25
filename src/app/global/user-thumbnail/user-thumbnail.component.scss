@@ -1,0 +1,70 @@
+@import "../../../styles.scss";
+.thumb-nail {
+  margin-bottom: 1rem;
+  p {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  a {
+    display: flex;
+    text-decoration: none;
+    color: $lightGray;
+  }
+  .img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    color: white;
+    border: 2px solid rgb(1, 9, 80);
+    padding: 2px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-image: linear-gradient(
+        to bottom,
+        #181717,
+        #1a1919,
+        #1c1a1b,
+        #1e1c1e,
+        #1f1e20,
+        #212022,
+        #222123,
+        #242325,
+        #262527,
+        #282728,
+        #2a292a,
+        #2c2b2c
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .info {
+    .name {
+      font-weight: bold;
+      font-size: 1rem;
+      color: black;
+      text-transform: capitalize;
+    }
+    .bio {
+      color: rgb(143, 143, 143);
+      line-height: 1.6;
+      max-width: 25ch;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      text-transform: lowercase;
+      font-weight: 400;
+    }
+  }
+}

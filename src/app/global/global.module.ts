@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { BottomNavigationComponent } from './bottom-navigation/bottom-navigation.component';
 import { LayoutComponent } from './layout/layout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SearchBoxComponent } from './header/search-box/search-box.component';
+import { UserThumbnailComponent } from './user-thumbnail/user-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BottomNavigationComponent,
     LayoutComponent,
     NotFoundComponent,
+    SearchBoxComponent,
+    UserThumbnailComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule, FormsModule],
   exports: [

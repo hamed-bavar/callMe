@@ -1,3 +1,4 @@
+import { SearchService } from './../search.service';
 import { Subscription } from 'rxjs';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -8,7 +9,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class HeaderComponent {
   isAuth: boolean | null;
-  constructor(private auth: AuthService) {
+  showSearchResults: boolean = false;
+  constructor(private auth: AuthService, private searchService: SearchService) {
     this.auth.signedin$.subscribe((e) => (this.isAuth = e));
   }
   showSearchBar: boolean = window.innerWidth < 600 ? true : false;
@@ -17,6 +19,12 @@ export class HeaderComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.showSearchBar = event.target.innerWidth < 600 ? true : false;
+    this.showSearchBar = window.innerWidth < 600 ? true : false;
+  }
+  focusSearchInput() {
+    this.showSearchResults = true;
+  }
+  changeText($event: any) {
+    this.searchService.search($event.target.value);
   }
 }

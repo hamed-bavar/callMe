@@ -1,0 +1,16 @@
+<div class="search-contaier">
+  <p>Results</p>
+  <div class="content" *ngIf="searchResults.length === 0">
+    <div>No matches yet</div>
+  </div>
+  <div *ngIf="searchResults.length !== 0">
+    <app-user-thumbnail
+      *ngFor="let userThumbnail of searchResults"
+      [username]="userThumbnail.username"
+      [bio]="userThumbnail.bio"
+      [id]="userThumbnail.ID"
+      [avatar]="userThumbnail.avatar"
+    ></app-user-thumbnail>
+  </div>
+</div>
+<div class="overlay" (click)="onClose()"></div>

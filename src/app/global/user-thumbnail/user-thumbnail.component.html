@@ -1,0 +1,14 @@
+<div class="thumb-nail">
+  <a href="">
+    <div class="img">
+      <img [src]="avatar" alt="" *ngIf="avatar" />
+      <div class="placeholder" *ngIf="avatar === ''">
+        {{ username.charAt(0) | uppercase }}
+      </div>
+    </div>
+    <div class="info">
+      <div class="name">{{ username }}</div>
+      <div class="bio">{{ bio }}...</div>
+    </div>
+  </a>
+</div>

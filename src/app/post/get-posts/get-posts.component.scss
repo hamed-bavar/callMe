@@ -24,4 +24,19 @@
       }
     }
   }
+  .img-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 2rem;
+    p {
+      font-size: 1.2rem;
+      line-height: 1.1;
+      color: $secondaryPlus;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  }
 }

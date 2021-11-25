@@ -11,3 +11,9 @@ export interface User {
   name: string; //
   username: string;
 }
+export interface SearchResult {
+  username: string;
+  bio: string;
+  ID: number;
+  avatar: string;
+}

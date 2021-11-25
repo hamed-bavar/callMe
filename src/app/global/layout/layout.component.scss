@@ -1,6 +1,7 @@
 .layout {
   padding-bottom: 60px;
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 60px);
+  padding-top: 80px;
 }
 @media (min-width: 650px) {
   .layout {

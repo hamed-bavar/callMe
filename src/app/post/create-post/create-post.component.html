@@ -9,7 +9,14 @@
       <mat-icon color="primary" (click)="closePage($event)"
         >arrow_back</mat-icon
       >
-      <button color="primary" (click)="submitForm()" type="submit">Post</button>
+      <button
+        color="primary"
+        (click)="submitForm()"
+        type="submit"
+        [disabled]="submitting"
+      >
+        Post
+      </button>
     </div>
     <hr />
     <div class="create-post-wrapper">
@@ -28,7 +35,7 @@
           [privateControl]="$any(postForm).get('private')"
           [tagsControl]="$any(postForm).get('keywords')"
         ></app-create-post-inputs>
-        <button class="btn">Make it</button>
+        <button class="btn" [disabled]="submitting">Make it</button>
       </div>
     </div>
   </form>

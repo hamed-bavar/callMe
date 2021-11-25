@@ -13,6 +13,7 @@ import { PostService } from '../post.service';
 })
 export class CreatePostComponent implements OnInit {
   files: any = [];
+  submitting: boolean = false;
   postForm = new FormGroup({
     photos: new FormControl(null, FileUploadValidators.filesLimit(4)),
     title: new FormControl('', Validators.required),
@@ -45,17 +46,19 @@ export class CreatePostComponent implements OnInit {
   }
   submitForm() {
     if (this.postForm.valid) {
+      this.submitting = true;
       this.postService.createPost(this.postForm.value).subscribe(
         (res) => {
           this.router.navigateByUrl('/dashboard');
           this.postForm.reset();
+          this.submitting = false;
         },
         (err) => {
-          console.log(err);
           if (err.error.description) {
             err.error.description = 'please fill all inputs';
           }
           this._snackBar.open(err.error.description, 'close', {});
+          this.submitting = false;
         }
       );
     } else {

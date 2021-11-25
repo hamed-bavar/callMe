@@ -2,7 +2,7 @@
   <div class="container">
     <img src="../../assets/logo.png" alt="logo" />
     <div class="header-buttons-group">
-      <div *ngIf="!showSearchBar">
+      <div *ngIf="!showSearchBar" class="main-btns">
         <a
           *ngIf="!isAuth"
           [routerLink]="['/register']"
@@ -19,17 +19,26 @@
         <a class="button" [routerLink]="['/explore']">explore</a>
         <a class="button" [routerLink]="['/']">home</a>
       </div>
-      <input
-        type="text"
-        [(ngModel)]="value"
-        *ngIf="showSearchBar"
-        class="inputfield"
-        placeholder="search user ..."
-      />
+      <div *ngIf="showSearchBar">
+        <input
+          type="text"
+          class="inputfield"
+          placeholder="search user ..."
+          (focus)="focusSearchInput()"
+          (input)="changeText($event)"
+        />
+        <app-search-box
+          *ngIf="showSearchResults && showSearchBar"
+          (closeResults)="this.showSearchResults = false"
+        ></app-search-box>
+      </div>
       <button class="resetButton">
         <mat-icon
           class="icon"
-          (click)="this.showSearchBar = !this.showSearchBar"
+          (click)="
+            this.showSearchBar = !this.showSearchBar;
+            this.showSearchResults = false
+          "
           >search</mat-icon
         >
       </button>
