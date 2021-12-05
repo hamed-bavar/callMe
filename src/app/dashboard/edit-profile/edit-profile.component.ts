@@ -1,8 +1,8 @@
-import { ProfileService } from './../profile.service';
 import { Router } from '@angular/router';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
+import { ProfileService } from 'src/app/user/profile.service';
 
 @Component({
   selector: 'app-edit-profile',

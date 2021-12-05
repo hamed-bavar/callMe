@@ -28,7 +28,7 @@ a {
   justify-content: center;
 }
 @mixin tablet-up {
-  @media (min-width: 650px) {
+  @media (min-width: 710px) {
     @content;
   }
 }

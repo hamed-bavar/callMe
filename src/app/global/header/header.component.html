@@ -26,10 +26,11 @@
           placeholder="search user ..."
           (focus)="focusSearchInput()"
           (input)="changeText($event)"
+          [(ngModel)]="value"
         />
         <app-search-box
           *ngIf="showSearchResults && showSearchBar"
-          (closeResults)="this.showSearchResults = false"
+          (closeResults)="this.value = ''; this.showSearchResults = false"
         ></app-search-box>
       </div>
       <button class="resetButton">

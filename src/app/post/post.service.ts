@@ -20,7 +20,7 @@ export class PostService {
     }
     return this.http.post(this.url + '/post', formData);
   }
-  getPosts() {
-    return this.http.get<Thumbnail[]>(this.url + '/posts');
+  getPosts(id: string | number = '') {
+    return this.http.get<Thumbnail[]>(this.url + '/posts/' + id);
   }
 }

@@ -1,9 +1,11 @@
 @import "../../../styles.scss";
-.get-posts-container {
-  padding-top: 2rem;
+.dynamicClass {
   @include desktop-up {
     margin-left: 17.2rem;
   }
+}
+.get-posts-container {
+  padding-top: 2rem;
   .skeletons,
   .tmnails {
     display: flex;

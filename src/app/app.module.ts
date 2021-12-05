@@ -1,3 +1,4 @@
+import { ResponseInterceptor } from './auth/response.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,7 @@ import { AuthHttpInterceptor } from './auth/auth-http-interceptor';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })

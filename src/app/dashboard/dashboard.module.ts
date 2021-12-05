@@ -25,6 +25,7 @@ import { PostModule } from '../post/post.module';
     ReactiveFormsModule,
     PostModule,
   ],
+  exports: [ProfileComponent, ProfileSkeletonComponent],
   providers: [],
 })
 export class DashboardModule {}

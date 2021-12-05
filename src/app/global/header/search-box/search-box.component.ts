@@ -13,11 +13,9 @@ export class SearchBoxComponent implements OnInit {
   searchResults: SearchResult[] = [];
   constructor(private searchService: SearchService) {
     this.results$ = this.searchService.results$.subscribe((e) => {
-      console.log(this.searchResults, 'ss');
       this.searchResults = e;
     });
   }
-
   ngOnInit(): void {}
 
   onClose() {

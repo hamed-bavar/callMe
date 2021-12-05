@@ -23,7 +23,7 @@ export class AuthService {
   ) {}
   doAuth(credentials: UserCredentials, type: boolean) {
     let url = this.url;
-    url += type === true ? '/register' : 'login';
+    url += type === true ? '/register' : '/login';
     this.loadingService.setLoading();
     return this.http.post<SignupResponse>(`${url}`, credentials).pipe(
       catchError((e: Error) => {

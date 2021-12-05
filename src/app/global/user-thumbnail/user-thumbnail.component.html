@@ -1,5 +1,5 @@
 <div class="thumb-nail">
-  <a href="">
+  <a [href]="'user/' + id">
     <div class="img">
       <img [src]="avatar" alt="" *ngIf="avatar" />
       <div class="placeholder" *ngIf="avatar === ''">

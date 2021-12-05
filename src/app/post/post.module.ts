@@ -35,6 +35,12 @@ import { ThumbnailComponent } from './get-posts/thumbnail/thumbnail.component';
     FileUploadModule,
     SwiperModule,
   ],
-  exports: [CreatePostComponent, GetPostsComponent],
+  exports: [
+    CreatePostComponent,
+    GetPostsComponent,
+    ThumbnailComponent,
+    PostSkeletonComponent,
+    GetPostsComponent,
+  ],
 })
 export class PostModule {}

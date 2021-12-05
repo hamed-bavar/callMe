@@ -1,4 +1,4 @@
-<div class="get-posts-container">
+<div class="get-posts-container" [ngClass]="{ dynamicClass: normalMode }">
   <div class="skeletons" *ngIf="loading">
     <app-post-skeleton *ngFor="let item of skeletons"></app-post-skeleton>
   </div>
@@ -20,7 +20,10 @@
         width="100px"
         style="box-sizing: border-box; max-width: 100%; width: 100px"
       />
-      <p>You have not created a post yet</p>
+      <p *ngIf="normalMode">You have not created a post yet</p>
+      <p *ngIf="!normalMode">
+        There isn't any post or at least any public post yet
+      </p>
     </div>
   </div>
 </div>

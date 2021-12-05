@@ -25,4 +25,7 @@ export class ProfileService {
     formData.append('avatar', file);
     return this.http.put<AvatarInterface>(this.url + '/avatar', formData);
   }
+  getUserProfile(id: string | number) {
+    return this.http.get(this.url + '/profile/' + id);
+  }
 }

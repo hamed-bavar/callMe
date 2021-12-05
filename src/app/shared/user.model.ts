@@ -10,6 +10,7 @@ export interface User {
   followings_count: number;
   name: string; //
   username: string;
+  following_status: string;
 }
 export interface SearchResult {
   username: string;

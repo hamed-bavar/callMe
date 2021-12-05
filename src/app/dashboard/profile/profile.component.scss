@@ -66,6 +66,7 @@
       justify-content: center;
       margin-left: 0.5rem;
       text-transform: capitalize;
+      margin-bottom: 1rem;
       .user {
         font-size: 1.5rem;
         margin-bottom: 8px;
@@ -175,4 +176,19 @@ p {
 .icon {
   color: navy;
   cursor: pointer;
+}
+.follow {
+  .req {
+    border: 1px solid $secondary !important;
+    background-color: $secondary !important;
+    color: white !important;
+  }
+  button {
+    background-color: $secondaryPlus;
+    padding: 0.5rem 1rem;
+    color: white;
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }

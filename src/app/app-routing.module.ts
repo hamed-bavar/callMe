@@ -12,6 +12,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((mod) => mod.DashboardModule),
   },
+  {
+    path: 'user',
+    canLoad: [AuthOnLoadGuard],
+    loadChildren: () =>
+      import('./user/user.module').then((mod) => mod.UserModule),
+  },
   { path: '**', pathMatch: 'full', component: NotFoundComponent },
 ];
 
