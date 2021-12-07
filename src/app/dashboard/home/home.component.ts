@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   ) {
     this.subRoute = this.route.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if (event.url === '/dashboard') {
+        if (event.url.includes('/dashboard')) {
           this.loading = true;
           this.profileService.getProfile().subscribe((data) => {
             this.loading = false;

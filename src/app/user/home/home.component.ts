@@ -36,6 +36,10 @@ export class HomeComponent implements OnInit {
       this.followService.deleteReq(this.userId).subscribe((res: any) => {
         this.userData.following_status = 'not_following';
       });
+    } else {
+      this.followService.unfollow(this.userId).subscribe((res: any) => {
+        this.userData.following_status = 'following';
+      });
     }
   }
   ngOnInit(): void {}

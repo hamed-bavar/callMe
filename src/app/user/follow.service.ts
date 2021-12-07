@@ -14,4 +14,7 @@ export class FollowService {
   deleteReq(id: number | string) {
     return this.http.delete(this.url + '/request/' + id);
   }
+  unfollow(id: number | string) {
+    return this.http.get(this.url + '/unfollow/' + id);
+  }
 }

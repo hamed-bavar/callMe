@@ -28,6 +28,7 @@ import { UserThumbnailComponent } from './user-thumbnail/user-thumbnail.componen
     BottomNavigationComponent,
     LayoutComponent,
     NotFoundComponent,
+    UserThumbnailComponent,
   ],
 })
 export class GlobalModule {}

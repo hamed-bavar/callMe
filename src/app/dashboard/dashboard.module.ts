@@ -1,3 +1,4 @@
+import { GlobalModule } from './../global/global.module';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,6 +11,8 @@ import { ProfileSkeletonComponent } from './profile-skeleton/profile-skeleton.co
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostModule } from '../post/post.module';
+import { NotifsComponent } from './notifs/notifs.component';
+import { NotifComponent } from './notifs/notif/notif.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,6 +20,8 @@ import { PostModule } from '../post/post.module';
     ProfileComponent,
     ProfileSkeletonComponent,
     EditProfileComponent,
+    NotifsComponent,
+    NotifComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +29,7 @@ import { PostModule } from '../post/post.module';
     SharedModule,
     ReactiveFormsModule,
     PostModule,
+    GlobalModule,
   ],
   exports: [ProfileComponent, ProfileSkeletonComponent],
   providers: [],
