@@ -35,14 +35,9 @@ export class RegisterComponent implements OnInit {
       });
       return;
     }
-    this.authService.doAuth(this.authForm.value, this.isSignUp).subscribe(
-      (_) => this.router.navigateByUrl('/dashboard'),
-      (message) => {
-        this._snackBar.open(message, 'close', {
-          duration: 3000,
-        });
-      }
-    );
+    this.authService
+      .doAuth(this.authForm.value, this.isSignUp)
+      .subscribe((_) => this.router.navigateByUrl('/dashboard'));
   }
   changeGoal() {
     this.isSignUp = !this.isSignUp;

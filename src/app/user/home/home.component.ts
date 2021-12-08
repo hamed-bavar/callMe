@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
       });
     } else {
       this.followService.unfollow(this.userId).subscribe((res: any) => {
-        this.userData.following_status = 'following';
+        this.userData.following_status = 'not_following';
       });
     }
   }

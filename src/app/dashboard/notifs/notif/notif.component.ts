@@ -10,14 +10,15 @@ export class NotifComponent implements OnInit {
   @Input() notif: Req;
   @Output() onAccept: EventEmitter<number | string> = new EventEmitter();
   @Output() onDecline: EventEmitter<number | string> = new EventEmitter();
-
   constructor() {}
 
   ngOnInit(): void {}
-  accept() {
+  accept($event: any) {
+    $event.stopPropagation();
     this.onAccept.emit(this.notif.ID);
   }
-  decline() {
-    this.onDecline.emit(this.notif.follower.ID);
+  decline($event: any) {
+    $event.stopPropagation();
+    this.onDecline.emit(this.notif.ID);
   }
 }

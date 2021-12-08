@@ -16,6 +16,6 @@ export class NotifService {
     return this.http.get<any>(this.url + `/request/${id}/accept`);
   }
   decline(id: string | number) {
-    return this.http.delete<any>(this.url + `/request/${id}`);
+    return this.http.get<any>(this.url + `/request/${id}/decline`);
   }
 }

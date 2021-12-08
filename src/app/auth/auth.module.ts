@@ -7,6 +7,7 @@ import { SignoutComponent } from './signout/signout.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GlobalModule } from '../global/global.module';
 @NgModule({
   declarations: [RegisterComponent, SignoutComponent],
   imports: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
+    GlobalModule,
   ],
 })
 export class AuthModule {}

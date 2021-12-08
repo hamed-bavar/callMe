@@ -28,7 +28,6 @@ export class AuthService {
     return this.http.post<SignupResponse>(`${url}`, credentials).pipe(
       catchError((e: Error) => {
         this.signedin$.next(false);
-        this.loadingService.onSetLoading();
         return throwError(e.error.description);
       }),
       tap((res) => {

@@ -4,7 +4,7 @@
   [bio]="'hey.can you please accept?'"
   [avatar]="notif.follower.avatar"
 ></app-user-thumbnail>
-<div class="samples" (click)="accept()">
+<div class="samples" (click)="decline($event)">
   <div class="sample ribbon up" style="--color: #242323">
     <div class="content">
       <svg
@@ -26,7 +26,11 @@
       </svg>
     </div>
   </div>
-  <div class="sample ribbon check" style="--color: #5e17eb" (click)="decline()">
+  <div
+    class="sample ribbon check"
+    style="--color: #5e17eb"
+    (click)="accept($event)"
+  >
     <div class="content">
       <svg
         width="24px"

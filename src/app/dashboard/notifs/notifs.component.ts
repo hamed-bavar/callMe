@@ -15,7 +15,6 @@ export class NotifsComponent implements OnInit {
     });
   }
   onAccept(id: string | number) {
-    console.log('yes hey');
     this.notifService.accept(id).subscribe((data) => {
       this.notifs = this.notifs.filter((notifs) => notifs.ID !== id);
       this.sn.open('The request was successfully approved', 'close', {
@@ -25,7 +24,7 @@ export class NotifsComponent implements OnInit {
   }
   onDecline(id: string | number) {
     this.notifService.decline(id).subscribe((data) => {
-      this.notifs = this.notifs.filter((notifs) => notifs.follower.ID !== id);
+      this.notifs = this.notifs.filter((notifs) => notifs.ID !== id);
       console.log(this.notifs);
       this.sn.open('The request was successfully rejected', 'close', {
         duration: 3000,
