@@ -10,8 +10,12 @@
   flex: 0 1 90%;
   display: flex;
   justify-content: center;
-  @include medium-up {
+
+  @include tablet-up {
     flex: 0 1 45%;
+  }
+  @include medium-up {
+    flex: 0 1 30%;
   }
 }
 .friend-wrapper {
