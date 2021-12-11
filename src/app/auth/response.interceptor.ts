@@ -29,10 +29,14 @@ export class ResponseInterceptor implements HttpInterceptor {
     return next.handle(httpRequest).pipe(
       catchError((e: Error) => {
         this.ls.onSetLoading();
-        if (!e.error.description) {
-          e.error.description = 'someThing went wrong';
+        if (e.status === 401) {
+          this.authService.signout();
+          this.router.navigate(['/register']);
+        } else {
+          if (!e.error.description)
+            e.error.description = 'someThing went wrong';
+          this.sb.open(e.error.description, 'close', { duration: 2000 });
         }
-        this.sb.open(e.error.description, 'close', { duration: 2000 });
         return next.handle(httpRequest);
       })
     );

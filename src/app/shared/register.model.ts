@@ -10,4 +10,5 @@ export interface Error {
   error: {
     description: string;
   };
+  status: number;
 }

@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/user.model';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProfileService } from 'src/app/user/profile.service';
 

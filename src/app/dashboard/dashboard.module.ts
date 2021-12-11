@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PostModule } from '../post/post.module';
 import { NotifsComponent } from './notifs/notifs.component';
 import { NotifComponent } from './notifs/notif/notif.component';
+import { FriendsComponent } from './friends/friends.component';
+import { FriendComponent } from './friends/friend/friend.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -22,6 +24,8 @@ import { NotifComponent } from './notifs/notif/notif.component';
     EditProfileComponent,
     NotifsComponent,
     NotifComponent,
+    FriendsComponent,
+    FriendComponent,
   ],
   imports: [
     CommonModule,

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     private followService: FollowService
   ) {
     this.loading = true;
-    this.router.params.pipe().subscribe((params) => {
+    this.router.params.subscribe((params) => {
       this.userId = params.id;
       this.profileService.getUserProfile(params.id).subscribe((res: any) => {
         this.userData = res;

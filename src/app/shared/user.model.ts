@@ -11,6 +11,7 @@ export interface User {
   name: string; //
   username: string;
   following_status: string;
+  ID: number;
 }
 export interface SearchResult {
   username: string;

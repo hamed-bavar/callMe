@@ -1,0 +1,17 @@
+<div class="friend-container">
+  <div *ngIf="users.length !== 0" class="list-container">
+    <app-friend *ngFor="let user of users" [user]="user"></app-friend>
+  </div>
+  <div *ngIf="users.length === 0">
+    <div class="center">
+      <mat-icon>{{ "face" }}</mat-icon>
+      <h3>
+        {{
+          type === false
+            ? "You have not any Followers Yet"
+            : "You have not any Following Yet"
+        }}
+      </h3>
+    </div>
+  </div>
+</div>

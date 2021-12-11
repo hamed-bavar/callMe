@@ -1,0 +1,30 @@
+@import "../../../styles.scss";
+.friend-container {
+  @include desktop-up {
+    margin-left: 17rem;
+  }
+}
+.center {
+  width: 100%;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.5;
+
+  mat-icon {
+    transform: scale(2);
+  }
+  h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+}
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  justify-content: center;
+  align-items: center;
+}
