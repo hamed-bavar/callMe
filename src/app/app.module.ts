@@ -12,8 +12,9 @@ import { RouterModule } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor } from './auth/auth-http-interceptor';
+import { ExploreComponent } from './explore/explore.component';
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent],
+  declarations: [AppComponent, LandingPageComponent, ExploreComponent],
   imports: [
     BrowserModule,
     AuthModule,

@@ -26,4 +26,12 @@ export class GetPostsComponent implements OnInit {
       }
     );
   }
+  onDeletePost(id: number) {
+    this.postService.deletePost(id).subscribe((res) => {
+      this.thumbnails = this.thumbnails.filter(
+        (thumbnail) => thumbnail.ID !== id
+      );
+    });
+  }
+  onGoToPost($event: any) {}
 }

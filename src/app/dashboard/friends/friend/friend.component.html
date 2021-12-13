@@ -43,22 +43,20 @@
     Image Not Found
   </div>
   <div mat-card-image></div>
-  <mat-card-content>
-    <p>
-      {{
-        user.bio
-          ? user.bio
-          : "I have not any bio . Come  and see my personal page"
-      }}
-    </p>
-  </mat-card-content>
+  <p>
+    {{
+      user.bio
+        ? user.bio
+        : "I have not any bio . Come  and see my personal page"
+    }}
+  </p>
   <mat-card-actions>
     <button
       mat-button
       style="background-color: #313131; color: white; padding: 0rem 0.7rem"
       (click)="changePage()"
     >
-      GO TO PERSONAL PAGE
+      PERSONAL PAGE
     </button>
   </mat-card-actions>
 </mat-card>

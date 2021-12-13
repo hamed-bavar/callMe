@@ -1,4 +1,14 @@
-<div class="single-thumbnail">
+<div
+  class="single-thumbnail"
+  (click)="goToPost($event); $event.stopPropagation()"
+>
+  <div
+    class="delete-icons"
+    (click)="deletePost($event); $event.stopPropagation()"
+    *ngIf="deleteMod"
+  >
+    <mat-icon>remove_circle </mat-icon>
+  </div>
   <div class="post-image">
     <img [src]="imageUrl" alt="" />
   </div>

@@ -23,4 +23,10 @@ export class PostService {
   getPosts(id: string | number = '') {
     return this.http.get<Thumbnail[]>(this.url + '/posts/' + id);
   }
+  deletePost(id: string | number) {
+    return this.http.delete<any>(this.url + '/post/' + id);
+  }
+  goToPost(id: string) {
+    return this.http.get<PostData>(this.url + '/post/' + id);
+  }
 }

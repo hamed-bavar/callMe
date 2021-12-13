@@ -82,7 +82,16 @@
     }
   }
 }
-
+.delete-icons {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  color: black;
+  & > * {
+    color: black;
+  }
+  z-index: 1000;
+}
 @media (hover) {
   .single-thumbnail:hover .title,
   .single-thumbnail:hover .desc {

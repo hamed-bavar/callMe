@@ -11,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class FriendsComponent implements OnInit {
   subRoute: Subscription;
   users: User[] = [];
-  type: boolean = false;
+  type: boolean = false; //type false means we are in followers page and reverse
+  loading: boolean = true;
+  skeletons = new Array(3).fill('');
   constructor(
     private activateRoute: ActivatedRoute,
     private route: Router,
@@ -23,13 +25,13 @@ export class FriendsComponent implements OnInit {
           this.type = false;
           this.fs.getFollowers().subscribe((data) => {
             this.users = data;
-            console.log(data);
+            this.loading = false;
           });
         } else {
           this.fs.getFollowings().subscribe((data) => {
             this.type = true;
             this.users = data;
-            console.log(data);
+            this.loading = false;
           });
         }
       }

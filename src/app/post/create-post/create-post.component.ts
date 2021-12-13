@@ -1,3 +1,4 @@
+import { LoadingService } from './../../shared/loading.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -25,7 +26,8 @@ export class CreatePostComponent implements OnInit {
     private el: ElementRef,
     private router: Router,
     private postService: PostService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private ls: LoadingService
   ) {
     this.postForm.get('photos')!.valueChanges.subscribe((photos) => {
       if (photos) {
@@ -47,17 +49,16 @@ export class CreatePostComponent implements OnInit {
   submitForm() {
     if (this.postForm.valid) {
       this.submitting = true;
+      this.ls.setLoading();
       this.postService.createPost(this.postForm.value).subscribe(
         (res) => {
           this.router.navigateByUrl('/dashboard');
           this.postForm.reset();
           this.submitting = false;
+          this.ls.onSetLoading();
         },
         (err) => {
-          if (err.error.description) {
-            err.error.description = 'please fill all inputs';
-          }
-          this._snackBar.open(err.error.description, 'close', {});
+          this.ls.onSetLoading();
           this.submitting = false;
         }
       );
