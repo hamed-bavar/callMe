@@ -5,6 +5,7 @@ export interface UserCredentials {
 }
 export interface SignupResponse {
   token: string;
+  userID: number | string;
 }
 export interface Error {
   error: {

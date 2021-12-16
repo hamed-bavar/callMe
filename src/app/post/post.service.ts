@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PostData, Thumbnail } from '../shared/post.model';
+import { map } from 'rxjs/operators';
+import { PostData, PostDetails, Thumbnail } from '../shared/post.model';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +27,20 @@ export class PostService {
   deletePost(id: string | number) {
     return this.http.delete<any>(this.url + '/post/' + id);
   }
-  goToPost(id: string) {
-    return this.http.get<PostData>(this.url + '/post/' + id);
+  getPostDetails(id: string) {
+    return this.http.get<PostDetails>(this.url + '/post/' + id).pipe(
+      map((res, index) => {
+        console.log(res, 'res');
+        const newRes = { ...res };
+        newRes.Photos = res.Photos.map((e) => e.path);
+        return newRes;
+      })
+    );
+  }
+  toggleLike(id: string | number, isLike: number) {
+    return this.http.post(
+      this.url + '/like/' + id + '?like=' + isLike.toString(),
+      {}
+    );
   }
 }

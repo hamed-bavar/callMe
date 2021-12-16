@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UserThumbnailComponent implements OnInit {
   @Input() username: string;
   @Input() id: number;
-  @Input() avatar: string;
+  @Input() avatar: string | undefined;
   @Input() bio: string;
   constructor() {}
 

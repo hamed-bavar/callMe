@@ -15,6 +15,8 @@ SwiperCore.use([Navigation]);
 })
 export class SliderComponent implements OnInit {
   @Input() photos: any = [];
-  constructor() {}
+  constructor() {
+    console.log('photos hoy', this.photos);
+  }
   ngOnInit(): void {}
 }

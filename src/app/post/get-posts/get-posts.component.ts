@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PostService } from './../post.service';
 import { Component, OnInit, Input } from '@angular/core';
@@ -13,7 +14,11 @@ export class GetPostsComponent implements OnInit {
   thumbnails: Thumbnail[] = [];
   @Input() userId: string | number;
   @Input() normalMode: boolean = true;
-  constructor(private postService: PostService, private snack: MatSnackBar) {}
+  constructor(
+    private postService: PostService,
+    private snack: MatSnackBar,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.postService.getPosts(this.userId).subscribe(
@@ -33,5 +38,7 @@ export class GetPostsComponent implements OnInit {
       );
     });
   }
-  onGoToPost($event: any) {}
+  onGoToPost(id: any) {
+    this.router.navigateByUrl(`/dashboard/${id}?edit=true`);
+  }
 }

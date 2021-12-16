@@ -15,6 +15,7 @@ export class AuthService {
   url = 'https://callme-back.herokuapp.com/api';
   signedin$ = new BehaviorSubject<boolean | null>(null);
   token$ = new BehaviorSubject<string | null>(null);
+  userID$ = new BehaviorSubject<number | string>('');
   constructor(
     private http: HttpClient,
     private locStorage: LocalstorageService,
@@ -32,8 +33,10 @@ export class AuthService {
       }),
       tap((res) => {
         this.locStorage.set('token', res.token);
+        this.locStorage.set('userID', JSON.stringify(res.userID));
         this.signedin$.next(true);
         this.token$.next(res.token);
+        this.userID$.next(res.userID);
         this.loadingService.onSetLoading();
         this.router.navigateByUrl('/');
       })
@@ -41,11 +44,16 @@ export class AuthService {
   }
   checkAuth() {
     const token = this.locStorage.get('token');
+    const userId = JSON.parse(this.locStorage.get('userID') as string);
     this.token$.next(token);
     token ? this.signedin$.next(true) : this.signedin$.next(false);
+    if (userId) {
+      this.userID$.next(userId);
+    }
   }
   signout() {
     this.locStorage.remove('token');
+    this.locStorage.remove('userID');
     this.signedin$.next(false);
     this.token$.next(null);
   }

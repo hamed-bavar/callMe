@@ -8,6 +8,7 @@
   width: 100%;
   position: fixed;
   bottom: 0;
+  z-index: 2;
   a {
     flex: 1 1 100%;
     color: $primary;

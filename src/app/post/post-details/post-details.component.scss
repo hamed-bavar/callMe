@@ -1,0 +1,100 @@
+@import "../../../styles.scss";
+.post-details {
+  margin: 1rem auto;
+
+  & > div {
+    margin: 0 auto;
+  }
+}
+
+.slider-container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.detail-comments {
+  max-width: 785px;
+  width: 96%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 0 auto;
+}
+.liked {
+  svg {
+    fill: red !important;
+    color: red !important;
+    path {
+      color: red !important;
+      fill: red !important;
+    }
+  }
+}
+.basic-infos {
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  .like {
+    display: flex;
+    color: gray;
+
+    & > * {
+      margin: 0.2rem;
+    }
+  }
+}
+.keywords {
+  display: flex;
+  align-items: center;
+  color: navy;
+  div {
+    padding: 0.2rem;
+  }
+  text-transform: lowercase;
+  line-height: 1;
+}
+.post-infos {
+  color: $secondaryPlus;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  word-wrap: none;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  mat-icon {
+    transform: scale(0.8);
+    align-items: center;
+    cursor: pointer;
+  }
+}
+.title {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  mat-icon {
+    position: relative;
+    top: 2px;
+  }
+  cursor: pointer;
+}
+.desc {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  mat-icon {
+    position: relative;
+    top: 3px;
+  }
+  line-height: 1.5;
+}
+.like-comment-icon {
+  display: flex;
+  flex-direction: row-reverse;
+  & > * {
+    margin: 0.1rem;
+  }
+  .comment {
+    position: relative;
+    top: 3px;
+  }
+}
+mat-icon {
+  cursor: pointer !important;
+}

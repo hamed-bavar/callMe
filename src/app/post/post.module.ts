@@ -1,3 +1,4 @@
+import { GlobalModule } from './../global/global.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,7 @@ import { CreatePostInputsComponent } from './create-post/create-post-inputs/crea
 import { CreatePostIndividualInputsComponent } from './create-post/create-post-individual-inputs/create-post-individual-inputs.component';
 import { PostSkeletonComponent } from './post-skeleton/post-skeleton.component';
 import { ThumbnailComponent } from './get-posts/thumbnail/thumbnail.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 @NgModule({
   declarations: [
     CreatePostComponent,
@@ -25,6 +27,7 @@ import { ThumbnailComponent } from './get-posts/thumbnail/thumbnail.component';
     CreatePostIndividualInputsComponent,
     PostSkeletonComponent,
     ThumbnailComponent,
+    PostDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { ThumbnailComponent } from './get-posts/thumbnail/thumbnail.component';
     FormsModule,
     FileUploadModule,
     SwiperModule,
+    GlobalModule,
   ],
   exports: [
     CreatePostComponent,
