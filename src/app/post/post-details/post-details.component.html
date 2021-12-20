@@ -55,16 +55,27 @@
       </div>
       <div class="post-infos">
         <p class="title">
-          {{ postDetails.Title }} <mat-icon *ngIf="editMode">edit</mat-icon>
+          {{ postDetails.Title }}
+          <mat-icon *ngIf="editMode" class="icon" (click)="openDialog('editT')"
+            >edit</mat-icon
+          >
         </p>
         <p class="desc">
           {{ postDetails.Description
-          }}<mat-icon *ngIf="editMode">edit</mat-icon>
+          }}<mat-icon
+            *ngIf="editMode"
+            class="icon"
+            (click)="openDialog('editC')"
+            >edit</mat-icon
+          >
         </p>
         <div class="keywords">
           <div *ngFor="let item of postDetails.Keywords.split(' ')">
             <p *ngIf="item !== ''">#{{ item }}</p>
           </div>
+          <mat-icon *ngIf="editMode" class="icon" (click)="openDialog('editK')"
+            >edit</mat-icon
+          >
         </div>
       </div>
       <hr />

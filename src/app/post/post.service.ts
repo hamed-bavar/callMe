@@ -43,4 +43,8 @@ export class PostService {
       {}
     );
   }
+  updatePost(postData: any, id: number | string) {
+    console.log(postData, 'postData');
+    return this.http.put(this.url + '/post/' + id, postData);
+  }
 }

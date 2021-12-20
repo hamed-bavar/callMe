@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotifComponent } from './notif.component';
+import { CustomDialogComponent } from './custom-dialog.component';
 
-describe('NotifComponent', () => {
-  let component: NotifComponent;
-  let fixture: ComponentFixture<NotifComponent>;
+describe('CustomDialogComponent', () => {
+  let component: CustomDialogComponent;
+  let fixture: ComponentFixture<CustomDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotifComponent ]
+      declarations: [ CustomDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotifComponent);
+    fixture = TestBed.createComponent(CustomDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

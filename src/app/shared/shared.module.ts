@@ -14,6 +14,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CustomDialogComponent } from './custom-dialog/custom-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 const materialComponents = [
   MatIconModule,
@@ -25,14 +28,16 @@ const materialComponents = [
   MatStepperModule,
   MatRadioModule,
   MatSlideToggleModule,
+  MatDialogModule,
 ];
 @NgModule({
-  declarations: [InputComponent, LoadingComponent],
+  declarations: [InputComponent, LoadingComponent, CustomDialogComponent],
   imports: [
     CommonModule,
     materialComponents,
     ReactiveFormsModule,
     NgxSkeletonLoaderModule,
+    FormsModule,
   ],
   exports: [
     materialComponents,
@@ -40,6 +45,7 @@ const materialComponents = [
     LoadingComponent,
     NgxSkeletonLoaderModule,
     MatExpansionModule,
+    CustomDialogComponent,
   ],
 })
 export class SharedModule {}

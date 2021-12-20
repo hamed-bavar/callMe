@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Edit Post</h1>
+<div mat-dialog-content>
+  <p>{{ data.explanation }}</p>
+  <mat-form-field appearance="fill">
+    <mat-label>edit it</mat-label>
+    <input matInput [(ngModel)]="data.value" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.value" cdkFocusInitial>Ok</button>
+</div>

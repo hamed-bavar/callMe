@@ -32,11 +32,10 @@ export class GetPostsComponent implements OnInit {
     );
   }
   onDeletePost(id: number) {
-    this.postService.deletePost(id).subscribe((res) => {
-      this.thumbnails = this.thumbnails.filter(
-        (thumbnail) => thumbnail.ID !== id
-      );
-    });
+    this.thumbnails = this.thumbnails.filter(
+      (thumbnail) => thumbnail.ID !== id
+    );
+    this.postService.deletePost(id).subscribe((res) => {});
   }
   onGoToPost(id: any) {
     this.router.navigateByUrl(`/dashboard/${id}?edit=true`);
