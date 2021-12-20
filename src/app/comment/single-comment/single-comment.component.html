@@ -1,0 +1,16 @@
+<div class="comment-container">
+  <div class="wrapper">
+    <app-user-thumbnail
+      [username]="comment.UserName"
+      [id]="comment.ID"
+      [avatar]="comment.Avatar"
+      [bio]="comment.Bio"
+    ></app-user-thumbnail>
+    <p class="comment-body">
+      {{ comment.Text }}
+    </p>
+  </div>
+  <div class="comment-remove" *ngIf="comment.OwnComment">
+    <mat-icon (click)="onRemoveComment()">remove_circle</mat-icon>
+  </div>
+</div>

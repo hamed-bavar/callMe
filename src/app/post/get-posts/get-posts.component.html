@@ -10,7 +10,7 @@
           [title]="thumbnail.title"
           [description]="thumbnail.description"
           [imageUrl]="thumbnail.photos[0].path"
-          [deleteMod]="true"
+          [deleteMod]="normalMode"
           (onDeletePost)="onDeletePost($event)"
           (onGoToPost)="onGoToPost($event)"
         ></app-thumbnail>

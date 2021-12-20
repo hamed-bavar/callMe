@@ -1,0 +1,142 @@
+@import "../../../../styles.scss";
+:host {
+  //   flex: 0 1 100%;
+  //   height: 300px;
+  //   @media screen and (min-width: 600px) {
+  //     flex: 0 1 23%;
+  //   }
+  //   display: flex;
+  //   justify-content: center;
+  flex: 0 1 90%;
+  display: flex;
+  justify-content: center;
+
+  @include tablet-up {
+    flex: 0 1 45%;
+  }
+  @include medium-up {
+    flex: 0 1 30%;
+  }
+}
+.friend-wrapper {
+  width: 220px;
+  height: 200px;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.fake-circle {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.5 ease;
+}
+.place-holder {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    #181717,
+    #1a1919,
+    #1c1a1b,
+    #1e1c1e,
+    #1f1e20,
+    #212022,
+    #222123,
+    #242325,
+    #262527,
+    #282728,
+    #2a292a,
+    #2c2b2c
+  );
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50%;
+  color: white;
+  font-size: 3.5rem;
+  transition: all 0.5s ease;
+}
+.img {
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease;
+  border-radius: 50%;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+.fake-circle:hover .place-holder,
+.fake-circle:hover .img {
+  transform: scale(0.9);
+}
+.fake-circle:hover {
+  border: 5px solid $secondary;
+  transition: all 0.5 ease;
+}
+.name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding-right: 1.7rem;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: rgb(49, 48, 48);
+  text-transform: capitalize;
+}
+.fake-circle:hover + .name {
+  color: $secondary;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  font-size: 1.15rem;
+}
+///////////////////////////
+.example-card {
+  width: 90%;
+  max-width: 300px;
+  margin-bottom: 2rem;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.example-header-image {
+  background-size: cover;
+  background-color: #222020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  object-fit: cover !important;
+  transform: scale(1.1);
+}
+.square {
+  background-image: linear-gradient(
+    to bottom,
+    #181717,
+    #1a1919,
+    #1c1a1b,
+    #1e1c1e,
+    #1f1e20,
+    #212022,
+    #222123,
+    #242325,
+    #262527,
+    #282728,
+    #2a292a,
+    #2c2b2c
+  );
+  height: 165px;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

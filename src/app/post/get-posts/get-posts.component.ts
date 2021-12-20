@@ -1,4 +1,5 @@
-import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { NavigationEnd, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PostService } from './../post.service';
 import { Component, OnInit, Input } from '@angular/core';
@@ -12,6 +13,8 @@ export class GetPostsComponent implements OnInit {
   skeletons = new Array(3);
   loading: boolean = true;
   thumbnails: Thumbnail[] = [];
+  subRoute: Subscription;
+  canDelete = false;
   @Input() userId: string | number;
   @Input() normalMode: boolean = true;
   constructor(
@@ -38,6 +41,8 @@ export class GetPostsComponent implements OnInit {
     this.postService.deletePost(id).subscribe((res) => {});
   }
   onGoToPost(id: any) {
-    this.router.navigateByUrl(`/dashboard/${id}?edit=true`);
+    this.normalMode === true
+      ? this.router.navigateByUrl(`/dashboard/${id}?edit=true`)
+      : this.router.navigateByUrl(`/post/${id}?edit=false`);
   }
 }

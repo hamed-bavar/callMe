@@ -1,0 +1,42 @@
+@import "../../../styles.scss";
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+}
+.modalWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modalContent {
+    width: 90%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    animation-name: anim;
+    animation-duration: 0.2s;
+    @include tablet-up {
+      width: 400px;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.form-field {
+  margin-top: 1rem;
+}
+@keyframes anim {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}

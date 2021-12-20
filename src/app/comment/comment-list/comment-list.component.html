@@ -1,0 +1,71 @@
+<section class="create-comment">
+  <svg
+    aria-label="Share Post"
+    class="svgIcon"
+    color="#262626"
+    fill="#262626"
+    height="24"
+    role="img"
+    viewBox="0 0 24 24"
+    width="24"
+    (click)="onSendComment()"
+  >
+    <line
+      fill="none"
+      stroke="currentColor"
+      stroke-linejoin="round"
+      stroke-width="2"
+      x1="22"
+      x2="9.218"
+      y1="3"
+      y2="10.083"
+    ></line>
+    <polygon
+      fill="none"
+      points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+      stroke="currentColor"
+      stroke-linejoin="round"
+      stroke-width="2"
+    ></polygon>
+  </svg>
+  <textarea
+    id="w3review"
+    name="w3review"
+    rows="4"
+    cols="50"
+    placeholder="write a comment ..."
+    (input)="changed($event)"
+    [value]="commentValue"
+  ></textarea>
+</section>
+<div class="list">
+  <div *ngIf="comments.length !== 0">
+    <div class="comment" *ngFor="let comment of this.comments">
+      <app-single-comment
+        [comment]="comment"
+        (deleteComment)="deleteComment($event)"
+      ></app-single-comment>
+    </div>
+  </div>
+  <div class="comment-svg" *ngIf="comments.length === 0">
+    <svg
+      aria-label="Comment"
+      class="_8-yf5"
+      color="#8e8e8e"
+      fill="#8e8e8e"
+      height="24"
+      role="img"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path
+        d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"
+        fill="none"
+        stroke="currentColor"
+        stroke-linejoin="round"
+        stroke-width="2"
+      ></path>
+    </svg>
+    <p>no comment has been added yet</p>
+  </div>
+</div>

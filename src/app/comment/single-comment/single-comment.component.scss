@@ -1,0 +1,46 @@
+@import "../../../styles.scss";
+.comment-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin: 2rem;
+  position: relative;
+  flex-direction: column;
+  @include tablet-up {
+    flex-direction: row;
+  }
+}
+.comment-body {
+  margin-left: 0.5rem;
+  @include desktop-up {
+    margin-left: 2.5rem;
+  }
+  color: rgb(78, 76, 76);
+  font-size: 0.98rem;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.comment-remove {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  color: rgb(189, 15, 15);
+}
+.wrapper {
+  position: relative;
+  top: 5px;
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+mat-icon {
+  cursor: pointer;
+}

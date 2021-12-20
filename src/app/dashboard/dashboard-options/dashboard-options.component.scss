@@ -1,0 +1,101 @@
+@import "../../../styles.scss";
+.optionslist {
+  border-bottom: 1px solid #e4d7d7;
+  border-top: 1px solid #e4d7d7;
+  @include tablet-up {
+    border: none;
+    border-right: 1px solid #e4d7d7;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    @include tablet-up {
+      flex-direction: column;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    li {
+      display: block;
+      @include tablet-up {
+        // padding: 0.5rem 0.5rem;
+        // padding: 1rem;
+      }
+      a {
+        text-decoration: none;
+        color: $lightGray;
+        display: block;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        margin: 0.1rem 0.5rem;
+        @include tablet-up {
+          font-size: 1.2rem;
+          margin-bottom: 0.7rem;
+          padding: 1rem 0.5rem;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+          }
+        }
+        .mat-icon {
+          transform: scale(0.7);
+          @include tablet-up {
+            transform: scale(1.2);
+            margin-right: 0.7rem;
+          }
+        }
+        span {
+          margin: 0;
+          padding: 0;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+.active {
+  display: inline-block;
+  color: navy !important;
+  font-weight: 500;
+  border-bottom: 2px solid navy;
+  @include tablet-up {
+    border: none;
+  }
+}
+.btn-createPost {
+  position: fixed;
+  right: 12px;
+  bottom: 60px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: $secondary;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 11;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.8s;
+  }
+  @include tablet-up {
+    width: 80px;
+    height: 80px;
+    right: 30px;
+    bottom: 80px;
+  }
+}
+.icon {
+  transform: scale(1.4);
+  color: white !important;
+}

@@ -78,7 +78,10 @@
           >
         </div>
       </div>
-      <hr />
+      <app-comment-list
+        [postId]="postDetails.ID"
+        [comments]="postDetails.Comments"
+      ></app-comment-list>
     </div>
   </div>
 </div>

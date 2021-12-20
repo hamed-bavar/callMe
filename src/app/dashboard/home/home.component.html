@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="main">
+    <div class="homeWrapper">
+      <app-profile-skeleton [show]="loading"></app-profile-skeleton>
+      <app-profile
+        *ngIf="!loading && userData"
+        [followers]="userData.followers_count"
+        [following]="userData.followings_count"
+        [username]="userData.username"
+        [avatar]="userData.avatar"
+        [bio]="userData.bio"
+        [born]="userData.born"
+        [city]="userData.city"
+        [country]="userData.country"
+        [created_at]="userData.created_at"
+        [editMode]="true"
+      ></app-profile>
+    </div>
+    <aside class="options">
+      <app-dashboard-options></app-dashboard-options>
+    </aside>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

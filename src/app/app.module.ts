@@ -1,3 +1,4 @@
+import { PostModule } from './post/post.module';
 import { ResponseInterceptor } from './auth/response.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,7 @@ import { ExploreComponent } from './explore/explore.component';
   imports: [
     BrowserModule,
     AuthModule,
+    PostModule,
     RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,

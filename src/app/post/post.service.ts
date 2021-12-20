@@ -30,7 +30,6 @@ export class PostService {
   getPostDetails(id: string) {
     return this.http.get<PostDetails>(this.url + '/post/' + id).pipe(
       map((res, index) => {
-        console.log(res, 'res');
         const newRes = { ...res };
         newRes.Photos = res.Photos.map((e) => e.path);
         return newRes;

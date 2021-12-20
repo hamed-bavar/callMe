@@ -1,0 +1,127 @@
+<div class="profile-wrapper" (click)="$event.stopPropagation()">
+  <section (click)="$event.stopPropagation()">
+    <div class="user-profile" (click)="$event.stopPropagation()">
+      <div
+        class="profile"
+        [ngClass]="{
+          'img-preview': file || avatar !== ''
+        }"
+      >
+        <div class="avatarPlaceholder">
+          {{ username.charAt(0) | uppercase }}
+        </div>
+      </div>
+      <div
+        class="profile"
+        [ngClass]="{
+          'img-preview': !file && avatar == ''
+        }"
+      >
+        <img
+          class="avatarPlaceholder img-preview-view"
+          [src]="this.avatar"
+          #imagePreview
+        />
+      </div>
+      <div class="profile-edit" *ngIf="editMode">
+        <mat-icon (click)="editPhoto()">mode</mat-icon
+        ><input
+          type="file"
+          class="input-file"
+          #fileInput
+          (change)="getImageFile($event)"
+        />
+      </div>
+      <div *ngIf="file" class="icons-wrapper">
+        <mat-icon class="icon" (click)="cancelImage()">cancel</mat-icon>
+        <mat-icon class="icon" (click)="confirmImage()">check_circle</mat-icon>
+      </div>
+    </div>
+    <div class="user-follow">
+      <div class="user">
+        <p>{{ username }}</p>
+      </div>
+      <div class="follow-wrapper">
+        <div class="followers">
+          <p>followers</p>
+          <span>{{ followers }}</span>
+        </div>
+        <div class="following">
+          <p>following</p>
+          <span> {{ following }}</span>
+        </div>
+      </div>
+      <div *ngIf="isMobile && editMode">
+        <button class="editBtn" (click)="goToEditPage()">Edit Profile</button>
+      </div>
+      <div class="follow" *ngIf="!editMode && isMobile">
+        <button
+          class="editBtn"
+          (click)="changeFollowState()"
+          *ngIf="followState === 'not_following'"
+        >
+          Follow
+        </button>
+        <button
+          class="editBtn"
+          (click)="changeFollowState()"
+          *ngIf="followState === 'following'"
+        >
+          Unfollow
+        </button>
+        <button
+          class="editBtn req"
+          (click)="changeFollowState()"
+          *ngIf="followState === 'requested'"
+        >
+          Requested
+        </button>
+      </div>
+    </div>
+    <div *ngIf="!isMobile && editMode">
+      <button class="editBtn" (click)="goToEditPage()">Edit Profile</button>
+    </div>
+    <div class="follow" *ngIf="!isMobile && !editMode">
+      <button
+        class="editBtn"
+        (click)="changeFollowState()"
+        *ngIf="followState === 'not_following'"
+      >
+        Follow
+      </button>
+      <button
+        class="editBtn"
+        (click)="changeFollowState()"
+        *ngIf="followState === 'following'"
+      >
+        Unfollow
+      </button>
+      <button
+        class="editBtn req"
+        (click)="changeFollowState()"
+        *ngIf="followState === 'requested'"
+      >
+        Requested
+      </button>
+    </div>
+  </section>
+  <div class="infos">
+    <div class="bio" *ngIf="bio !== ''">
+      <p>{{ bio }}</p>
+    </div>
+    <div class="location-born">
+      <div class="location" *ngIf="country !== '' || city !== ''">
+        <mat-icon color="gray">place</mat-icon>
+        <p>{{ city }} , {{ country }}</p>
+      </div>
+      <div class="born" *ngIf="born !== null">
+        <mat-icon>cake</mat-icon>
+        <p>{{ born | date: "MMM d, yyyy" }}</p>
+      </div>
+    </div>
+    <div class="join">
+      <mat-icon>event</mat-icon>
+      <p>Joined {{ created_at | date: "MMM d, yyyy" }}</p>
+    </div>
+  </div>
+</div>

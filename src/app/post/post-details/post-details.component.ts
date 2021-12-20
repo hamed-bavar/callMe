@@ -5,11 +5,7 @@ import { PostService } from './../post.service';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { CustomDialogComponent } from 'src/app/shared/custom-dialog/custom-dialog.component';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-post-details',
@@ -32,9 +28,11 @@ export class PostDetailsComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         let idParam = this.route.url.split('/')[2].split('?');
         const id = idParam[0];
+        console.log(idParam[1], 'heck');
         this.editMode = idParam[1] === 'edit=false' ? false : true;
         this.post.getPostDetails(id).subscribe((res) => {
           this.postDetails = res;
+          console.log(res, 'post details');
           this.loading = false;
           console.log(this.postDetails, 'details');
         });

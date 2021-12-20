@@ -3,6 +3,10 @@ $primary: white;
 $secondary: #5e17eb;
 $secondaryPlus: #313131;
 $lightGray: rgb(68, 68, 68);
+.cdk-overlay-container {
+  position: fixed;
+  z-index: 10000;
+}
 *,
 p {
   padding: 0;
@@ -12,6 +16,7 @@ p {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  // font-family: "Times New Roman", Times, serif !important;
 }
 .container {
   width: 100%;

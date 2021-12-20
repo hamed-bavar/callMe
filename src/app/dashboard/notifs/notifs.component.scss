@@ -1,0 +1,23 @@
+@import "../../../styles.scss";
+.notifContainer {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  @include desktop-up {
+    margin-left: 17rem;
+  }
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 20vh;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  mat-icon {
+    transform: scale(2);
+    margin-bottom: 25px;
+  }
+}

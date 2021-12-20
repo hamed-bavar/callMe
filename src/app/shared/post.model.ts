@@ -18,6 +18,9 @@ export interface Comment {
   PostID: number;
   Text: string;
   OwnComment: boolean;
+  Avatar: string;
+  Bio: string;
+  UserName: string;
 }
 export interface Photo {
   path: string;

@@ -1,0 +1,27 @@
+@import "../../../styles.scss";
+.container {
+  padding-top: 1.5rem;
+  .main {
+    @include tablet-up {
+      display: flex;
+      flex-direction: row-reverse;
+      border-bottom: 1px solid #e4d7d7;
+    }
+    .homeWrapper {
+      @include tablet-up {
+        width: 65%;
+      }
+      @include desktop-up {
+        width: 80%;
+      }
+    }
+    .options {
+      @include tablet-up {
+        width: 35%;
+      }
+      @include desktop-up {
+        width: 20%;
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { CommentModule } from './../comment/comment.module';
 import { GlobalModule } from './../global/global.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../shared/shared.module';
@@ -38,6 +39,7 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     FileUploadModule,
     SwiperModule,
     GlobalModule,
+    CommentModule,
   ],
   exports: [
     CreatePostComponent,

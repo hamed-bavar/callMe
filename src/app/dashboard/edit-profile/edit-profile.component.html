@@ -1,0 +1,116 @@
+<div class="modalWrapper" (click)="closePage($event)">
+  <div class="modalContent">
+    <mat-stepper
+      orientation="vertical"
+      [linear]="isLinear"
+      #stepper
+      (click)="$event.stopPropagation()"
+    >
+      <mat-step [stepControl]="formGroup">
+        <form [formGroup]="formGroup">
+          <ng-template matStepLabel>Fill out your name</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+          <div>
+            <button
+              mat-button
+              matStepperNext
+              (click)="submitForm($event, 'name')"
+            >
+              Set
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="formGroup">
+        <form [formGroup]="formGroup">
+          <ng-template matStepLabel>Fill out your City</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" placeholder="Ex.Tehran" />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button
+              mat-button
+              matStepperNext
+              (click)="submitForm($event, 'city')"
+            >
+              Set
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="formGroup">
+        <form [formGroup]="formGroup">
+          <ng-template matStepLabel>Fill out your Country</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country" placeholder="Ex.Iran" />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button
+              mat-button
+              matStepperNext
+              (click)="submitForm($event, 'country')"
+            >
+              Set
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="formGroup">
+        <form [formGroup]="formGroup">
+          <ng-template matStepLabel>Fill out your Bio</ng-template>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Bio</mat-label>
+            <input matInput formControlName="bio" placeholder="..." />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button
+              mat-button
+              matStepperNext
+              (click)="submitForm($event, 'bio')"
+            >
+              Set
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="formGroup">
+        <form [formGroup]="formGroup">
+          <ng-template matStepLabel>Add your birthday</ng-template>
+          <input type="date" class="form-field" formControlName="born" />
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button
+              mat-button
+              matStepperNext
+              (click)="submitForm($event, 'born')"
+            >
+              Set
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step (click)="$event.stopPropagation()">
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button
+            mat-button
+            (click)="stepper.reset()"
+            (click)="closePage($event)"
+          >
+            Close
+          </button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>
