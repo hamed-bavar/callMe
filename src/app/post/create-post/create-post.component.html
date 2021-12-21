@@ -21,7 +21,9 @@
     <hr />
     <div class="create-post-wrapper">
       <div class="slider-uploader">
-        <app-slider [photos]="files" class="slider"></app-slider>
+        <div class="slider">
+          <app-slider [photos]="files"></app-slider>
+        </div>
         <div (click)="$event.stopPropagation()">
           <app-image-uploader
             [filesControl]="$any(postForm).get('photos')"

@@ -16,8 +16,9 @@
           class="button border-btn"
           >Profile</a
         >
-        <a class="button" [routerLink]="['/explore']">explore</a>
-        <a class="button" [routerLink]="['/']">home</a>
+        <a class="button" [routerLink]="['/explore']">Explore</a>
+        <a class="button" [routerLink]="['/']" *ngIf="!isAuth">Home</a>
+        <a class="button" [routerLink]="['/logout']" *ngIf="isAuth">Logout</a>
       </div>
       <div *ngIf="showSearchBar">
         <input

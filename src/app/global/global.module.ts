@@ -10,6 +10,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SearchBoxComponent } from './header/search-box/search-box.component';
 import { UserThumbnailComponent } from './user-thumbnail/user-thumbnail.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UserThumbnailComponent } from './user-thumbnail/user-thumbnail.componen
     NotFoundComponent,
     SearchBoxComponent,
     UserThumbnailComponent,
+    LogoutComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule, FormsModule],
   exports: [

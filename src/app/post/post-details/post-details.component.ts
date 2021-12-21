@@ -44,6 +44,11 @@ export class PostDetailsComponent implements OnInit {
   ngOnDestroy() {
     this.subRoute.unsubscribe();
   }
+  scrollTo() {
+    document
+      .getElementById('comment-section')
+      ?.scrollIntoView({ behavior: 'smooth' });
+  }
   toggleLike() {
     const isLike = this.postDetails.HasLiked === true ? 0 : 1;
     this.postDetails.HasLiked = !this.postDetails.HasLiked;

@@ -29,10 +29,11 @@
       </div></ng-template
     >
   </ng-template>
-  <ng-template [ngIf]="photos.length !== 0">
+  <ng-template [ngIf]="photos.length !== 0" class="imgs">
     <ng-container *ngFor="let photo of photos">
-      <ng-template swiperSlide
-        ><img [src]="photo | safeResourceUrl" alt="" class="img"
-      /></ng-template>
-    </ng-container> </ng-template
+      <ng-template swiperSlide>
+        <div class="img-cntr">
+          <img [src]="photo | safeResourceUrl" alt="" class="img" />
+        </div>
+      </ng-template> </ng-container></ng-template
 ></swiper>

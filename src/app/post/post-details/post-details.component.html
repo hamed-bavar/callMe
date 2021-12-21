@@ -31,7 +31,7 @@
             </svg>
             <p>{{ postDetails.Likes }}</p>
           </div>
-          <div class="comment">
+          <div class="comment" (click)="scrollTo()">
             <svg
               aria-label="Comment"
               class="_8-yf5"
@@ -78,10 +78,12 @@
           >
         </div>
       </div>
-      <app-comment-list
-        [postId]="postDetails.ID"
-        [comments]="postDetails.Comments"
-      ></app-comment-list>
+      <div id="comment-section">
+        <app-comment-list
+          [postId]="postDetails.ID"
+          [comments]="postDetails.Comments"
+        ></app-comment-list>
+      </div>
     </div>
   </div>
 </div>

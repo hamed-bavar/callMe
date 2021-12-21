@@ -1,3 +1,4 @@
+import { LogoutComponent } from './global/logout/logout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthOnLoadGuard } from './auth/auth-on-load.guard';
@@ -14,6 +15,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((mod) => mod.DashboardModule),
   },
+  { path: 'logout', component: LogoutComponent },
   {
     path: 'user',
     canLoad: [AuthOnLoadGuard],

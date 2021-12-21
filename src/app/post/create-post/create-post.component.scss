@@ -68,6 +68,9 @@
         display: flex;
       }
       .slider-uploader {
+        .slider {
+          height: 75%;
+        }
         @include medium-up {
           width: 70%;
         }

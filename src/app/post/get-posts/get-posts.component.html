@@ -23,8 +23,10 @@
         width="100px"
         style="box-sizing: border-box; max-width: 100%; width: 100px"
       />
-      <p *ngIf="normalMode">You have not created a post yet</p>
-      <p *ngIf="!normalMode">
+      <p *ngIf="normalMode" class="post-message">
+        You have not created a post yet
+      </p>
+      <p *ngIf="!normalMode" class="post-message">
         There isn't any post or at least any public post yet
       </p>
     </div>

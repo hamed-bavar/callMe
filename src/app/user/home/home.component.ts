@@ -1,7 +1,7 @@
 import { FollowService } from './../follow.service';
 import { ProfileService } from './../profile.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/shared/user.model';
 
 @Component({
@@ -16,15 +16,23 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: ActivatedRoute,
     private profileService: ProfileService,
-    private followService: FollowService
+    private followService: FollowService,
+    private route: Router
   ) {
     this.loading = true;
     this.router.params.subscribe((params) => {
       this.userId = params.id;
-      this.profileService.getUserProfile(params.id).subscribe((res: any) => {
-        this.userData = res;
-        this.loading = false;
-      });
+      if (
+        window.location.href.includes('user') &&
+        params.id == localStorage.getItem('userID')
+      ) {
+        this.route.navigateByUrl(`/dashboard`);
+      } else {
+        this.profileService.getUserProfile(params.id).subscribe((res: any) => {
+          this.userData = res;
+          this.loading = false;
+        });
+      }
     });
   }
   setFollowState(state: string) {

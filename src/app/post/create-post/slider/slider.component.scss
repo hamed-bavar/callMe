@@ -1,9 +1,11 @@
 @import "~swiper/css";
 @import "~swiper/css/navigation";
+@import "../../../../styles.scss";
 .swiper {
-  width: 100%;
-  height: 75%;
+  width: 98%;
+  height: 100%;
   border-radius: 4px;
+  margin: 0 auto;
 }
 .swiper-slide {
   text-align: center;
@@ -46,4 +48,16 @@
     font-size: 1.2rem;
     font-weight: bold;
   }
+}
+.img-cntr {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
 }
