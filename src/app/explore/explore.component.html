@@ -1,6 +1,17 @@
 <div class="container" id="container">
-  <div *ngFor="let item of currentData">
-    <img [src]="item.photos[0]" [alt]="item.description" />
+  <h1>Explore</h1>
+  <div class="images-container">
+    <div
+      *ngFor="let item of currentData; trackBy: pictureWithTitle"
+      (click)="goToPost(item.ID)"
+    >
+      <img
+        [id]="item.ID"
+        [src]="item.photos && item.photos.length > 0 && item.photos[0].path"
+        [alt]="item.description"
+        onerror="this.onerror=null;this.src='https://picsum.photos/200/300?random=1'"
+      />
+    </div>
   </div>
   <div class="intersect" id="listItem"></div>
 </div>

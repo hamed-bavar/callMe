@@ -11,7 +11,7 @@ export class ExploreService {
 
   getExploreNthPage(page: number) {
     return this.http.get<Thumbnail[]>(
-      this.url + `/explore?page=${page}&resultsPerPage=10`
+      this.url + `/explore?page=${page}&resultsPerPage=20`
     );
   }
 }
