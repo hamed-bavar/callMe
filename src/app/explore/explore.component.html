@@ -1,6 +1,6 @@
 <div class="container" id="container">
-  <div *ngFor="let arr of arr">
-    <div class="test"></div>
+  <div *ngFor="let item of currentData">
+    <img [src]="item.photos[0]" [alt]="item.description" />
   </div>
   <div class="intersect" id="listItem"></div>
 </div>
