@@ -5,10 +5,15 @@ import { AuthOnLoadGuard } from './auth/auth-on-load.guard';
 import { ExploreComponent } from './explore/explore.component';
 import { NotFoundComponent } from './global/not-found/not-found.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AuthActiveGuardGuard } from './auth/auth-active-guard.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: LandingPageComponent },
-  { path: 'explore', component: ExploreComponent },
+  {
+    path: 'explore',
+    component: ExploreComponent,
+    canActivate: [AuthActiveGuardGuard],
+  },
   {
     path: 'dashboard',
     canLoad: [AuthOnLoadGuard],
