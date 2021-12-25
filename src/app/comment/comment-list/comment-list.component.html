@@ -2,11 +2,12 @@
   <textarea
     id="w3review"
     name="w3review"
-    rows="2"
+    rows="3"
     cols="30"
     placeholder="write a comment ..."
     (input)="changed($event)"
     [value]="commentValue"
+    style="resize: none"
   ></textarea>
   <button class="btns" (click)="onSendComment()">Done</button>
 </section>
