@@ -9,7 +9,7 @@ import {
   HttpEvent,
   HttpInterceptor,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Error } from '../shared/register.model';
 
@@ -30,14 +30,15 @@ export class ResponseInterceptor implements HttpInterceptor {
       catchError((e: Error) => {
         this.ls.onSetLoading();
         if (e.status === 401) {
-          this.authService.signout();
-          this.router.navigate(['/register']);
+          if (!this.router.routerState.snapshot.url.includes('register')) {
+            this.authService.signout();
+          }
         } else {
           if (!e.error.description)
             e.error.description = 'someThing went wrong';
           this.sb.open(e.error.description, 'close', { duration: 2000 });
         }
-        return next.handle(httpRequest);
+        return throwError(e);
       })
     );
   }

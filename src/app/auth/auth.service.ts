@@ -56,5 +56,6 @@ export class AuthService {
     this.locStorage.remove('userID');
     this.signedin$.next(false);
     this.token$.next(null);
+    this.router.navigateByUrl('/register');
   }
 }

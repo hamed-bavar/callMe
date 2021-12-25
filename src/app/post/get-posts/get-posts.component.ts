@@ -24,15 +24,10 @@ export class GetPostsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.postService.getPosts(this.userId).subscribe(
-      (res) => {
-        this.loading = false;
-        this.thumbnails = res;
-      },
-      (err) => {
-        this.snack.open(err.error.description, 'close', {});
-      }
-    );
+    this.postService.getPosts(this.userId).subscribe((res) => {
+      this.loading = false;
+      this.thumbnails = res;
+    });
   }
   onDeletePost(id: number) {
     this.thumbnails = this.thumbnails.filter(
