@@ -1,62 +1,23 @@
-<!-- <div class="friend-wrapper">
-  <a [routerLink]="'/user/' + user.ID" class="fake-circle">
-    <div class="place-holder" *ngIf="user.avatar === ''">
-      {{ user.username.charAt(0) | uppercase }}
-    </div>
-    <div class="img" *ngIf="user.avatar !== ''">
-      <img [src]="user.avatar" alt="" />
-    </div>
-  </a>
-  <p class="name">{{ user.username }}</p>
-</div> -->
-<mat-card class="example-card">
-  <mat-card-header>
-    <div
-      *ngIf="user.avatar !== ''"
-      mat-card-avatar
-      class="example-header-image"
-      [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')' }"
-    ></div>
-    <div
-      *ngIf="user.avatar === ''"
-      mat-card-avatar
-      class="example-header-image"
-      [ngStyle]="{ 'background-image': 'url(' + user.avatar + ')' }"
-    >
-      {{ user.username.charAt(0) | uppercase }}
-    </div>
-    <mat-card-title>{{ user.username }}</mat-card-title>
-    <mat-card-subtitle>{{ user.name ? user.name : "..." }}</mat-card-subtitle>
-  </mat-card-header>
-  <img
-    mat-card-image
-    [src]="user.avatar"
-    *ngIf="user.avatar !== ''"
-    alt="Photo of a Shiba Inu"
-  />
+<li (click)="changePage()">
   <div
-    mat-card-image
-    *ngIf="user.avatar === ''"
-    alt="Photo of a Shiba Inu"
-    class="square"
+    class="img-shower placeholder"
+    *ngIf="user.avatar === '' || user.avatar === undefined"
   >
-    Image Not Found
+    {{ user.username.charAt(0) | uppercase }}
   </div>
-  <div mat-card-image></div>
+  <div class="img-shower">
+    <img
+      class="actual-img"
+      *ngIf="user.avatar !== '' && user.avatar !== undefined"
+      [src]="user.avatar"
+    />
+  </div>
+
+  <h3>{{ user.username }}</h3>
   <p>
     {{
-      user.bio
-        ? user.bio
-        : "I have not any bio . Come  and see my personal page"
+      user.bio === "" ? "I have not bio yet , please come to my page" : user.bio
     }}
   </p>
-  <mat-card-actions>
-    <button
-      mat-button
-      style="background-color: #313131; color: white; padding: 0rem 0.7rem"
-      (click)="changePage()"
-    >
-      PERSONAL PAGE
-    </button>
-  </mat-card-actions>
-</mat-card>
+  <button>View Page</button>
+</li>
