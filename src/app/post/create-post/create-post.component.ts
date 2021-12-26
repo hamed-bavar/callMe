@@ -16,7 +16,7 @@ export class CreatePostComponent implements OnInit {
   files: any = [];
   submitting: boolean = false;
   postForm = new FormGroup({
-    photos: new FormControl(null, FileUploadValidators.filesLimit(4)),
+    photos: new FormControl([], FileUploadValidators.filesLimit(4)),
     title: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
     private: new FormControl(true, Validators.required),
