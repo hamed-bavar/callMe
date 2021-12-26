@@ -14,7 +14,7 @@ import { of, Subject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SearchService {
-  url = 'https://callme-back.herokuapp.com/api';
+  url = 'https://callme-back2.herokuapp.com/api';
   searchText$ = new Subject();
   results$ = new Observable<SearchResult[]>();
   constructor(private http: HttpClient) {

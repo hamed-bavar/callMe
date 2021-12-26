@@ -6,7 +6,7 @@ import { Req } from '../shared/request.mode';
   providedIn: 'root',
 })
 export class NotifService {
-  url = 'https://callme-back.herokuapp.com/api';
+  url = 'https://callme-back2.herokuapp.com/api';
 
   constructor(private http: HttpClient) {}
   getNotifs() {

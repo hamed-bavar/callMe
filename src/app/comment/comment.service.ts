@@ -5,7 +5,7 @@ import { Comment } from '../shared/post.model';
   providedIn: 'root',
 })
 export class CommentService {
-  url = 'https://callme-back.herokuapp.com/api';
+  url = 'https://callme-back2.herokuapp.com/api';
   constructor(private http: HttpClient) {}
   add(id: number | string, body: { text: string }) {
     return this.http.post<Comment>(`${this.url}/comment/${id}`, body);

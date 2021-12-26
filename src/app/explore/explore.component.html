@@ -1,7 +1,10 @@
 <div class="container" id="container">
-  <h1>Explore</h1>
+  <section class="not-found" *ngIf="currentData.length === 0">
+    <div>There is not any post , come back later :)</div>
+  </section>
   <div class="images-container">
     <div
+      class="items"
       *ngFor="let item of currentData; trackBy: pictureWithTitle"
       (click)="goToPost(item.ID)"
     >

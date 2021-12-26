@@ -20,7 +20,6 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
-      Validators.maxLength(20),
     ]),
   });
   constructor(

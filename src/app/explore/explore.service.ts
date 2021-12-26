@@ -6,7 +6,7 @@ import { Thumbnail } from '../shared/post.model';
   providedIn: 'root',
 })
 export class ExploreService {
-  url = 'https://callme-back.herokuapp.com/api';
+  url = 'https://callme-back2.herokuapp.com/api';
   constructor(private http: HttpClient) {}
 
   getExploreNthPage(page: number) {

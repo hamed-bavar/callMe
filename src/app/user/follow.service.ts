@@ -6,7 +6,7 @@ import { User } from '../shared/user.model';
   providedIn: 'root',
 })
 export class FollowService {
-  url = 'https://callme-back.herokuapp.com/api';
+  url = 'https://callme-back2.herokuapp.com/api';
   constructor(private http: HttpClient) {}
 
   follow(id: number | string) {

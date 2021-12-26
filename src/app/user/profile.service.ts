@@ -8,7 +8,7 @@ interface AvatarInterface {
   providedIn: 'root',
 })
 export class ProfileService {
-  url = 'https://callme-back.herokuapp.com/api';
+  url = 'https://callme-back2.herokuapp.com/api';
   constructor(private http: HttpClient) {}
 
   getProfile() {
